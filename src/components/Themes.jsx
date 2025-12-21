@@ -1,6 +1,11 @@
 import React from 'react';
 import './Themes.css';
 
+// Import card images
+import card1Image from '../assets/card1.svg';
+import card2Image from '../assets/card2.svg';
+import card3Image from '../assets/card3.svg';
+
 const Themes = () => {
   const themes = [
     {
@@ -10,7 +15,7 @@ const Themes = () => {
       price: '$59',
       rating: 4.8,
       reviews: 234,
-      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f8fafc"/><rect width="300" height="60" fill="%23FF741F"/><rect x="20" y="20" width="40" height="20" fill="white" opacity="0.9"/><rect x="220" y="15" width="60" height="30" fill="white" opacity="0.9"/><rect x="20" y="80" width="260" height="100" fill="white"/><rect x="30" y="90" width="80" height="60" fill="%23e2e8f0"/><rect x="120" y="90" width="80" height="60" fill="%23e2e8f0"/><rect x="210" y="90" width="60" height="60" fill="%23e2e8f0"/><rect x="30" y="160" width="240" height="10" fill="%23cbd5e0"/></svg>',
+      image: card1Image,
       tags: ['Responsive', 'SEO Ready', 'Mobile First']
     },
     {
@@ -20,7 +25,7 @@ const Themes = () => {
       price: '$45',
       rating: 4.9,
       reviews: 189,
-      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f8fafc"/><rect width="300" height="50" fill="%23764BA2"/><circle cx="50" cy="25" r="15" fill="white" opacity="0.9"/><rect x="200" y="15" width="80" height="20" fill="white" opacity="0.9"/><rect x="20" y="70" width="120" height="80" fill="%23e2e8f0"/><rect x="160" y="70" width="120" height="80" fill="%23cbd5e0"/><rect x="20" y="160" width="260" height="8" fill="%23a0aec0"/><rect x="20" y="175" width="180" height="6" fill="%23cbd5e0"/></svg>',
+      image: card2Image,
       tags: ['Creative', 'Animation', 'Gallery']
     },
     {
@@ -30,7 +35,7 @@ const Themes = () => {
       price: '$69',
       rating: 4.7,
       reviews: 312,
-      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f8fafc"/><rect width="300" height="40" fill="%23667eea"/><rect x="20" y="10" width="60" height="20" fill="white" opacity="0.9"/><rect x="200" y="8" width="80" height="24" fill="white" opacity="0.9"/><rect x="20" y="60" width="260" height="120" fill="white"/><rect x="30" y="70" width="240" height="30" fill="%23FF741F"/><rect x="30" y="110" width="110" height="60" fill="%23e2e8f0"/><rect x="160" y="110" width="110" height="60" fill="%23cbd5e0"/></svg>',
+      image: card3Image,
       tags: ['Corporate', 'Professional', 'Clean']
     },
     {
@@ -40,7 +45,7 @@ const Themes = () => {
       price: '$39',
       rating: 4.6,
       reviews: 156,
-      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f8fafc"/><rect width="300" height="45" fill="%23a855f7"/><rect x="20" y="12" width="80" height="20" fill="white" opacity="0.9"/><rect x="180" y="10" width="100" height="25" fill="white" opacity="0.9"/><rect x="20" y="65" width="180" height="115" fill="white"/><rect x="220" y="65" width="60" height="115" fill="%23f7fafc"/><rect x="30" y="75" width="160" height="20" fill="%23FF741F"/><rect x="30" y="105" width="160" height="8" fill="%23cbd5e0"/><rect x="30" y="120" width="120" height="6" fill="%23e2e8f0"/></svg>',
+      image: card1Image,
       tags: ['Blog', 'Content', 'Typography']
     },
     {
@@ -50,7 +55,7 @@ const Themes = () => {
       price: '$79',
       rating: 4.9,
       reviews: 278,
-      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f8fafc"/><rect width="300" height="55" fill="%23e53e3e"/><rect x="20" y="15" width="70" height="25" fill="white" opacity="0.9"/><rect x="200" y="12" width="80" height="30" fill="white" opacity="0.9"/><rect x="20" y="75" width="260" height="105" fill="white"/><rect x="30" y="85" width="240" height="25" fill="%23FF741F"/><rect x="30" y="120" width="70" height="50" fill="%23e2e8f0"/><rect x="115" y="120" width="70" height="50" fill="%23cbd5e0"/><rect x="200" y="120" width="70" height="50" fill="%23a0aec0"/></svg>',
+      image: card2Image,
       tags: ['Agency', 'Marketing', 'Modern']
     },
     {
@@ -60,7 +65,7 @@ const Themes = () => {
       price: '$55',
       rating: 4.8,
       reviews: 203,
-      image: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f8fafc"/><rect width="300" height="50" fill="%2338b2ac"/><rect x="20" y="12" width="90" height="25" fill="white" opacity="0.9"/><rect x="180" y="10" width="100" height="30" fill="white" opacity="0.9"/><rect x="20" y="70" width="260" height="110" fill="white"/><rect x="30" y="80" width="240" height="20" fill="%23FF741F"/><rect x="30" y="110" width="80" height="60" fill="%23e2e8f0"/><rect x="125" y="110" width="80" height="60" fill="%23cbd5e0"/><rect x="220" y="110" width="50" height="60" fill="%23a0aec0"/></svg>',
+      image: card3Image,
       tags: ['Education', 'LMS', 'Interactive']
     }
   ];

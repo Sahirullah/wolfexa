@@ -16,16 +16,20 @@
 }
 
 .reviews-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 30px;
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .reviews-header {
   text-align: center;
   margin-bottom: 50px;
+  width: 100%;
 }
 
 .reviews-title {
@@ -53,6 +57,8 @@
   background: white;
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
 }
 
 .stat-item {
@@ -99,6 +105,11 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
   margin-bottom: 60px;
+  justify-content: center;
+  align-items: start;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .review-card {
@@ -271,6 +282,8 @@
   color: white;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .reviews-cta::before {

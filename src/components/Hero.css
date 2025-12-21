@@ -164,11 +164,8 @@
 
 .hero-graphic {
   position: relative;
-  width: 500px;
+  width: 400px;
   height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .floating-card {
@@ -185,30 +182,30 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 20px;
 }
 
 .card-1 {
   width: 220px;
   height: 140px;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 40px;
+  left: 40px;
   animation-delay: 0s;
 }
 
 .card-2 {
   width: 200px;
   height: 120px;
-  top: 180px;
-  right: 30px;
+  top: 200px;
+  right: 20px;
   animation-delay: 2s;
 }
 
 .card-3 {
   width: 180px;
   height: 110px;
-  bottom: 50px;
-  left: 30px;
+  bottom: 70px;
+  left: 10px;
   animation-delay: 4s;
 }
 
@@ -245,27 +242,22 @@
   }
 
   .hero-graphic {
-    width: 350px;
+    width: 300px;
     height: 300px;
   }
 
   .card-1 {
-    width: 160px;
-    height: 100px;
-    top: 10px;
+    width: 150px;
+    height: 90px;
   }
 
   .card-2 {
-    width: 140px;
-    height: 90px;
-    top: 130px;
-    right: 20px;
+    width: 130px;
+    height: 80px;
   }
 
   .card-3 {
-    width: 130px;
-    height: 80px;
-    bottom: 30px;
-    left: 20px;
+    width: 120px;
+    height: 70px;
   }
 }

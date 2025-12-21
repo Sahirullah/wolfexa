@@ -1,7 +1,8 @@
 import React from 'react';
-import card1 from '../assets/card1.svg';
-import card2 from '../assets/card2.svg';
-import card3 from '../assets/card3.svg';
+// Using custom card images
+import card1 from '../assets/card1.js';
+import card2 from '../assets/card2.js';
+import card3 from '../assets/card3.js';
 import './Hero.css';
 
 const Hero = () => {
@@ -42,13 +43,13 @@ const Hero = () => {
         <div className="hero-image">
           <div className="hero-graphic">
             <div className="floating-card card-1">
-              <img src={card1} alt="Theme Preview 1" className="card-image" />
+              <img src={card1} alt="E-commerce Theme Preview" className="card-image" />
             </div>
             <div className="floating-card card-2">
-              <img src={card2} alt="Theme Preview 2" className="card-image" />
+              <img src={card2} alt="Portfolio Theme Preview" className="card-image" />
             </div>
             <div className="floating-card card-3">
-              <img src={card3} alt="Theme Preview 3" className="card-image" />
+              <img src={card3} alt="Business Theme Preview" className="card-image" />
             </div>
           </div>
         </div>
