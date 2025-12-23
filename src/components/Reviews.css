@@ -102,14 +102,12 @@
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(3, 350px);
+  gap: 30px;
   margin-bottom: 60px;
   justify-content: center;
-  align-items: start;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: stretch;
+  width: 100%;
 }
 
 .review-card {
@@ -120,6 +118,10 @@
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .review-card::before {
@@ -204,14 +206,14 @@
 }
 
 .review-content {
-  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .review-text {
   font-size: 16px;
   line-height: 1.6;
   color: #4a5568;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   font-style: italic;
 }
 
@@ -223,6 +225,7 @@
   background: rgba(255, 116, 31, 0.1);
   border-radius: 8px;
   border-left: 3px solid #FF741F;
+  margin: 20px 0;
 }
 
 .theme-label {
@@ -243,6 +246,7 @@
   align-items: center;
   padding-top: 20px;
   border-top: 1px solid #e2e8f0;
+  margin-top: auto;
 }
 
 .helpful-btn {
@@ -352,15 +356,29 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .reviews-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 350px);
+    justify-content: center;
+    gap: 25px;
+    max-width: 1000px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .reviews-container {
+    padding: 0 25px;
+  }
+
+  .reviews-title {
+    font-size: 36px;
+  }
+
   .reviews-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 320px);
     gap: 20px;
+  }
+
+  .review-card {
+    padding: 25px;
   }
 }
 
@@ -383,8 +401,9 @@
 
   .reviews-stats {
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
     padding: 30px;
+    max-width: 600px;
   }
 
   .stat-number {
@@ -394,9 +413,12 @@
   .reviews-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 450px;
   }
 
   .review-card {
+    max-width: 100%;
+    width: 100%;
     padding: 24px;
   }
 
@@ -427,6 +449,50 @@
 }
 
 @media (max-width: 480px) {
+  .reviews {
+    padding: 50px 0;
+  }
+
+  .reviews-container {
+    padding: 0 15px;
+  }
+
+  .reviews-header {
+    margin-bottom: 40px;
+  }
+
+  .reviews-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .reviews-subtitle {
+    font-size: 15px;
+  }
+
+  .reviews-stats {
+    gap: 20px;
+    padding: 25px;
+    margin-bottom: 40px;
+  }
+
+  .stat-number {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .reviews-grid {
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .review-card {
+    padding: 20px;
+  }
+
   .reviewer-info {
     flex-direction: column;
     text-align: center;
@@ -436,23 +502,74 @@
   .reviewer-avatar {
     width: 50px;
     height: 50px;
+    align-self: center;
+  }
+
+  .reviewer-name {
+    font-size: 16px;
+  }
+
+  .reviewer-role {
+    font-size: 13px;
+  }
+
+  .reviewer-company {
+    font-size: 12px;
+  }
+
+  .review-text {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .review-theme {
+    padding: 6px 10px;
+    margin: 15px 0;
+  }
+
+  .theme-label {
+    font-size: 11px;
+  }
+
+  .theme-name {
+    font-size: 12px;
   }
 
   .review-footer {
     flex-direction: column;
     gap: 12px;
     align-items: stretch;
+    padding-top: 15px;
   }
 
   .helpful-btn {
     justify-content: center;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .verified-badge {
+    font-size: 11px;
+    text-align: center;
   }
 
   .reviews-cta {
     padding: 30px 20px;
+    max-width: 100%;
   }
 
   .cta-title {
     font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .cta-subtitle {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .cta-button {
+    padding: 14px 28px;
+    font-size: 15px;
   }
 }

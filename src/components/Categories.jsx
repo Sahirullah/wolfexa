@@ -5,66 +5,66 @@ const Categories = () => {
   const categories = [
     {
       id: 1,
-      name: 'E-commerce',
+      name: 'Computer Science',
       count: '2,450+',
-      icon: '🛒',
-      description: 'Online store templates',
+      icon: '💻',
+      description: 'Programming & CS materials',
       color: '#FF741F'
     },
     {
       id: 2,
-      name: 'Portfolio',
+      name: 'Mathematics',
       count: '1,890+',
-      icon: '💼',
-      description: 'Creative showcase themes',
+      icon: '📐',
+      description: 'Math formulas & solutions',
       color: '#ff8c42'
     },
     {
       id: 3,
-      name: 'Business',
-      count: '3,200+',
-      icon: '🏢',
-      description: 'Corporate website templates',
+      name: 'Physics',
+      count: '1,200+',
+      icon: '⚛️',
+      description: 'Physics concepts & experiments',
       color: '#e5650e'
     },
     {
       id: 4,
-      name: 'Blog',
+      name: 'Chemistry',
       count: '1,650+',
-      icon: '📝',
-      description: 'Content publishing themes',
+      icon: '🧪',
+      description: 'Chemical reactions & formulas',
       color: '#FF741F'
     },
     {
       id: 5,
-      name: 'Agency',
+      name: 'Biology',
       count: '980+',
-      icon: '🎯',
-      description: 'Marketing agency templates',
+      icon: '🧬',
+      description: 'Life sciences & biology',
       color: '#ff8c42'
     },
     {
       id: 6,
-      name: 'Education',
+      name: 'Islamic Studies',
       count: '750+',
-      icon: '🎓',
-      description: 'Learning platform themes',
+      icon: '🕌',
+      description: 'Islamic knowledge & studies',
       color: '#e5650e'
     },
     {
       id: 7,
-      name: 'Restaurant',
+      name: 'MCM',
       count: '620+',
-      icon: '🍽️',
-      description: 'Food & dining templates',
+      icon: '📺',
+      description: 'Mass Communication & Media',
       color: '#FF741F'
     },
     {
       id: 8,
-      name: 'Health',
+      name: 'General',
       count: '540+',
-      icon: '🏥',
-      description: 'Medical & wellness themes',
+      icon: '📚',
+      description: 'General study materials',
       color: '#ff8c42'
     }
   ];
@@ -73,9 +73,9 @@ const Categories = () => {
     <section className="categories">
       <div className="categories-container">
         <div className="categories-header">
-          <h2 className="categories-title">Browse by Category</h2>
+          <h2 className="categories-title">Browse by Subject</h2>
           <p className="categories-subtitle">
-            Discover the perfect theme for your project from our curated collection
+            Find study materials organized by academic subjects and universities
           </p>
         </div>
         
@@ -97,7 +97,7 @@ const Categories = () => {
         
         <div className="categories-footer">
           <button className="view-all-btn">
-            View All Categories
+            View All Subjects
             <span className="btn-arrow">→</span>
           </button>
         </div>

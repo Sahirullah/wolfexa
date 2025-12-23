@@ -10,63 +10,63 @@ const Themes = () => {
   const themes = [
     {
       id: 1,
-      name: 'ModernShop Pro',
-      category: 'E-commerce',
-      price: '$59',
+      name: 'CS101 Complete Package',
+      category: 'Computer Science',
+      price: 'Free',
       rating: 4.8,
       reviews: 234,
       image: card1Image,
-      tags: ['Responsive', 'SEO Ready', 'Mobile First']
+      tags: ['Handouts', 'Assignments', 'Past Papers']
     },
     {
       id: 2,
-      name: 'Creative Portfolio',
-      category: 'Portfolio',
-      price: '$45',
+      name: 'Mathematics Solved Papers',
+      category: 'Mathematics',
+      price: 'Free',
       rating: 4.9,
       reviews: 189,
       image: card2Image,
-      tags: ['Creative', 'Animation', 'Gallery']
+      tags: ['Solutions', 'Formulas', 'Practice']
     },
     {
       id: 3,
-      name: 'Business Hub',
-      category: 'Business',
-      price: '$69',
+      name: 'Physics Lab Reports',
+      category: 'Physics',
+      price: 'Free',
       rating: 4.7,
       reviews: 312,
       image: card3Image,
-      tags: ['Corporate', 'Professional', 'Clean']
+      tags: ['Lab Work', 'Experiments', 'Reports']
     },
     {
       id: 4,
-      name: 'BlogMaster',
-      category: 'Blog',
-      price: '$39',
+      name: 'Islamic Studies Notes',
+      category: 'Islamic Studies',
+      price: 'Free',
       rating: 4.6,
       reviews: 156,
       image: card1Image,
-      tags: ['Blog', 'Content', 'Typography']
+      tags: ['Quran', 'Hadith', 'Fiqh']
     },
     {
       id: 5,
-      name: 'Agency Pro',
-      category: 'Agency',
-      price: '$79',
+      name: 'Chemistry Practical Guide',
+      category: 'Chemistry',
+      price: 'Free',
       rating: 4.9,
       reviews: 278,
       image: card2Image,
-      tags: ['Agency', 'Marketing', 'Modern']
+      tags: ['Practicals', 'Reactions', 'Formulas']
     },
     {
       id: 6,
-      name: 'EduPlatform',
-      category: 'Education',
-      price: '$55',
+      name: 'MCM Project Collection',
+      category: 'MCM',
+      price: 'Free',
       rating: 4.8,
       reviews: 203,
       image: card3Image,
-      tags: ['Education', 'LMS', 'Interactive']
+      tags: ['Projects', 'Media', 'Communication']
     }
   ];
 
@@ -74,9 +74,9 @@ const Themes = () => {
     <section className="themes">
       <div className="themes-container">
         <div className="themes-header">
-          <h2 className="themes-title">Featured Themes</h2>
+          <h2 className="themes-title">Featured Study Materials</h2>
           <p className="themes-subtitle">
-            Handpicked premium themes designed by top creators
+            High-quality educational resources curated by top students and educators
           </p>
         </div>
         
@@ -88,7 +88,7 @@ const Themes = () => {
                 <div className="theme-overlay">
                   <button className="preview-btn">
                     <span className="btn-icon">👁️</span>
-                    Live Preview
+                    Preview
                   </button>
                 </div>
               </div>
@@ -117,8 +117,8 @@ const Themes = () => {
                   </div>
                   <div className="theme-actions">
                     <button className="buy-btn">
-                      <span className="btn-icon">🛒</span>
-                      Buy Now
+                      <span className="btn-icon">📥</span>
+                      Download
                     </button>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ const Themes = () => {
         
         <div className="themes-footer">
           <button className="load-more-btn">
-            Load More Themes
+            Load More Materials
             <span className="btn-arrow">↓</span>
           </button>
         </div>

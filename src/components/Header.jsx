@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import logoImage from '../assets/logo (2).png';
+import { Link } from 'react-router-dom';
+import logoImage from '../assets/logo (3).png';
 import { useTheme } from '../context/ThemeContext';
 import './Header.css';
 
@@ -13,11 +14,13 @@ const Header = () => {
       <div className="top-bar">
         <div className="top-bar-container">
           <div className="logo-section">
-            <img src={logoImage} alt="Wolfexa Logo" className="logo-image" />
-            <div>
-              <h1 className="logo">WOLFEXA</h1>
-              <div className="logo-subtitle">Theme Marketplace</div>
-            </div>
+            <Link to="/" className="logo-link">
+              <img src={logoImage} alt="Wolfexa Logo" className="logo-image" />
+              <div>
+                <h1 className="logo">VIRTUAL LIBRARY</h1>
+                <div className="logo-subtitle">Educational Resources</div>
+              </div>
+            </Link>
           </div>
           
           <div className="header-right">
@@ -33,7 +36,7 @@ const Header = () => {
                 <span className="contact-icon">✉️</span>
                 <div className="contact-text">
                   <span className="contact-label">Mail Us</span>
-                  <span className="contact-value">info@wolfexa.com</span>
+                  <span className="contact-value">info@virtuallibrary.com</span>
                 </div>
               </div>
             </div>
@@ -56,10 +59,10 @@ const Header = () => {
         <div className="nav-container">
           <nav className={isMenuOpen ? 'nav-open' : ''}>
             <ul className="nav-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#themes">About Us</a></li>
-              <li><a href="#categories">Reviews</a></li>
-              <li><a href="#contact">Contact Us</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><a href="#reviews">Reviews</a></li>
+              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
           </nav>
 
@@ -79,41 +82,259 @@ const Header = () => {
         <div className="category-container">
           <ul className="category-links">
             <li className="dropdown">
-              <a href="#shopify">
-                Shopify <span className="dropdown-arrow">▼</span>
+              <a href="#islamic">
+                Islamic <span className="dropdown-arrow">▼</span>
               </a>
               <div className="dropdown-menu">
-                <a href="#portfolio">Portfolio</a>
-                <a href="#shopping">Shopping</a>
-                <a href="#agency">Agency</a>
-                <a href="#institute">Institute</a>
+                <a href="#quran">Quran Studies</a>
+                <a href="#hadith">Hadith</a>
+                <a href="#fiqh">Fiqh</a>
+                <a href="#tafseer">Tafseer</a>
               </div>
             </li>
             <li className="dropdown">
-              <a href="#wordpress">
-                WordPress <span className="dropdown-arrow">▼</span>
+              <a href="#virtual-university">
+                Virtual University <span className="dropdown-arrow">▼</span>
               </a>
               <div className="dropdown-menu">
-                <a href="#blog">Blog</a>
-                <a href="#business">Business</a>
-                <a href="#ecommerce">E-commerce</a>
-                <a href="#portfolio">Portfolio</a>
+                <div className="dropdown-submenu">
+                  <a href="#handouts">Handouts <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-handouts">CS Subjects</a>
+                    <a href="#bio-handouts">Biology</a>
+                    <a href="#chem-handouts">Chemistry</a>
+                    <a href="#phy-handouts">Physics</a>
+                    <a href="#islamyath-handouts">Islamyath</a>
+                    <a href="#math-handouts">Mathematics</a>
+                    <a href="#mcm-handouts">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#highlighted-handouts">Highlighted Handouts <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-highlighted">CS Subjects</a>
+                    <a href="#bio-highlighted">Biology</a>
+                    <a href="#chem-highlighted">Chemistry</a>
+                    <a href="#phy-highlighted">Physics</a>
+                    <a href="#islamyath-highlighted">Islamyath</a>
+                    <a href="#math-highlighted">Mathematics</a>
+                    <a href="#mcm-highlighted">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#midterm">Midterm <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-midterm">CS Subjects</a>
+                    <a href="#bio-midterm">Biology</a>
+                    <a href="#chem-midterm">Chemistry</a>
+                    <a href="#phy-midterm">Physics</a>
+                    <a href="#islamyath-midterm">Islamyath</a>
+                    <a href="#math-midterm">Mathematics</a>
+                    <a href="#mcm-midterm">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#final-term">Final Term <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-final">CS Subjects</a>
+                    <a href="#bio-final">Biology</a>
+                    <a href="#chem-final">Chemistry</a>
+                    <a href="#phy-final">Physics</a>
+                    <a href="#islamyath-final">Islamyath</a>
+                    <a href="#math-final">Mathematics</a>
+                    <a href="#mcm-final">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#quizzes">Quizzes <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-quizzes">CS Subjects</a>
+                    <a href="#bio-quizzes">Biology</a>
+                    <a href="#chem-quizzes">Chemistry</a>
+                    <a href="#phy-quizzes">Physics</a>
+                    <a href="#islamyath-quizzes">Islamyath</a>
+                    <a href="#math-quizzes">Mathematics</a>
+                    <a href="#mcm-quizzes">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#assignments">Assignments <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-assignments">CS Subjects</a>
+                    <a href="#bio-assignments">Biology</a>
+                    <a href="#chem-assignments">Chemistry</a>
+                    <a href="#phy-assignments">Physics</a>
+                    <a href="#islamyath-assignments">Islamyath</a>
+                    <a href="#math-assignments">Mathematics</a>
+                    <a href="#mcm-assignments">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#gdbs">GDBs <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-gdbs">CS Subjects</a>
+                    <a href="#bio-gdbs">Biology</a>
+                    <a href="#chem-gdbs">Chemistry</a>
+                    <a href="#phy-gdbs">Physics</a>
+                    <a href="#islamyath-gdbs">Islamyath</a>
+                    <a href="#math-gdbs">Mathematics</a>
+                    <a href="#mcm-gdbs">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#midterm-reviews">Midterm Student Reviews <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-midterm-reviews">CS Subjects</a>
+                    <a href="#bio-midterm-reviews">Biology</a>
+                    <a href="#chem-midterm-reviews">Chemistry</a>
+                    <a href="#phy-midterm-reviews">Physics</a>
+                    <a href="#islamyath-midterm-reviews">Islamyath</a>
+                    <a href="#math-midterm-reviews">Mathematics</a>
+                    <a href="#mcm-midterm-reviews">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#final-reviews">Final Term Student Reviews <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#cs-final-reviews">CS Subjects</a>
+                    <a href="#bio-final-reviews">Biology</a>
+                    <a href="#chem-final-reviews">Chemistry</a>
+                    <a href="#phy-final-reviews">Physics</a>
+                    <a href="#islamyath-final-reviews">Islamyath</a>
+                    <a href="#math-final-reviews">Mathematics</a>
+                    <a href="#mcm-final-reviews">MCM</a>
+                  </div>
+                </div>
               </div>
             </li>
-            <li><a href="#html">HTML</a></li>
             <li className="dropdown">
-              <a href="#react">
-                React <span className="dropdown-arrow">▼</span>
+              <a href="#allama-iqbal-uni">
+                Allama Iqbal Uni <span className="dropdown-arrow">▼</span>
               </a>
               <div className="dropdown-menu">
-                <a href="#dashboard">Dashboard</a>
-                <a href="#landing">Landing Page</a>
-                <a href="#admin">Admin Panel</a>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-handouts">Handouts <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-handouts">CS Subjects</a>
+                    <a href="#aiou-bio-handouts">Biology</a>
+                    <a href="#aiou-chem-handouts">Chemistry</a>
+                    <a href="#aiou-phy-handouts">Physics</a>
+                    <a href="#aiou-islamyath-handouts">Islamyath</a>
+                    <a href="#aiou-math-handouts">Mathematics</a>
+                    <a href="#aiou-mcm-handouts">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-highlighted-handouts">Highlighted Handouts <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-highlighted">CS Subjects</a>
+                    <a href="#aiou-bio-highlighted">Biology</a>
+                    <a href="#aiou-chem-highlighted">Chemistry</a>
+                    <a href="#aiou-phy-highlighted">Physics</a>
+                    <a href="#aiou-islamyath-highlighted">Islamyath</a>
+                    <a href="#aiou-math-highlighted">Mathematics</a>
+                    <a href="#aiou-mcm-highlighted">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-midterm">Midterm <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-midterm">CS Subjects</a>
+                    <a href="#aiou-bio-midterm">Biology</a>
+                    <a href="#aiou-chem-midterm">Chemistry</a>
+                    <a href="#aiou-phy-midterm">Physics</a>
+                    <a href="#aiou-islamyath-midterm">Islamyath</a>
+                    <a href="#aiou-math-midterm">Mathematics</a>
+                    <a href="#aiou-mcm-midterm">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-final-term">Final Term <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-final">CS Subjects</a>
+                    <a href="#aiou-bio-final">Biology</a>
+                    <a href="#aiou-chem-final">Chemistry</a>
+                    <a href="#aiou-phy-final">Physics</a>
+                    <a href="#aiou-islamyath-final">Islamyath</a>
+                    <a href="#aiou-math-final">Mathematics</a>
+                    <a href="#aiou-mcm-final">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-quizzes">Quizzes <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-quizzes">CS Subjects</a>
+                    <a href="#aiou-bio-quizzes">Biology</a>
+                    <a href="#aiou-chem-quizzes">Chemistry</a>
+                    <a href="#aiou-phy-quizzes">Physics</a>
+                    <a href="#aiou-islamyath-quizzes">Islamyath</a>
+                    <a href="#aiou-math-quizzes">Mathematics</a>
+                    <a href="#aiou-mcm-quizzes">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-assignments">Assignments <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-assignments">CS Subjects</a>
+                    <a href="#aiou-bio-assignments">Biology</a>
+                    <a href="#aiou-chem-assignments">Chemistry</a>
+                    <a href="#aiou-phy-assignments">Physics</a>
+                    <a href="#aiou-islamyath-assignments">Islamyath</a>
+                    <a href="#aiou-math-assignments">Mathematics</a>
+                    <a href="#aiou-mcm-assignments">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-gdbs">GDBs <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-gdbs">CS Subjects</a>
+                    <a href="#aiou-bio-gdbs">Biology</a>
+                    <a href="#aiou-chem-gdbs">Chemistry</a>
+                    <a href="#aiou-phy-gdbs">Physics</a>
+                    <a href="#aiou-islamyath-gdbs">Islamyath</a>
+                    <a href="#aiou-math-gdbs">Mathematics</a>
+                    <a href="#aiou-mcm-gdbs">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-midterm-reviews">Midterm Student Reviews <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-midterm-reviews">CS Subjects</a>
+                    <a href="#aiou-bio-midterm-reviews">Biology</a>
+                    <a href="#aiou-chem-midterm-reviews">Chemistry</a>
+                    <a href="#aiou-phy-midterm-reviews">Physics</a>
+                    <a href="#aiou-islamyath-midterm-reviews">Islamyath</a>
+                    <a href="#aiou-math-midterm-reviews">Mathematics</a>
+                    <a href="#aiou-mcm-midterm-reviews">MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a href="#aiou-final-reviews">Final Term Student Reviews <span className="dropdown-arrow">▶</span></a>
+                  <div className="submenu">
+                    <a href="#aiou-cs-final-reviews">CS Subjects</a>
+                    <a href="#aiou-bio-final-reviews">Biology</a>
+                    <a href="#aiou-chem-final-reviews">Chemistry</a>
+                    <a href="#aiou-phy-final-reviews">Physics</a>
+                    <a href="#aiou-islamyath-final-reviews">Islamyath</a>
+                    <a href="#aiou-math-final-reviews">Mathematics</a>
+                    <a href="#aiou-mcm-final-reviews">MCM</a>
+                  </div>
+                </div>
               </div>
             </li>
-            <li><a href="#php">PHP</a></li>
-            <li><a href="#vue">Vue.js</a></li>
-            <li><a href="#angular">Angular</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li className="dropdown">
+              <a href="#biography">
+                Biography <span className="dropdown-arrow">▼</span>
+              </a>
+              <div className="dropdown-menu">
+                <a href="#scholars">Islamic Scholars</a>
+                <a href="#leaders">Leaders</a>
+                <a href="#personalities">Personalities</a>
+              </div>
+            </li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#opportunities">Opportunities</a></li>
           </ul>
         </div>
       </div>

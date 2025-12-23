@@ -36,6 +36,7 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
   margin-bottom: 60px;
+  align-items: stretch;
 }
 
 .theme-card {
@@ -46,6 +47,9 @@
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .theme-card:hover {
@@ -113,6 +117,9 @@
 
 .theme-content {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .theme-header {
@@ -167,6 +174,7 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .theme-tag {
@@ -183,6 +191,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
 
 .theme-price {
@@ -260,6 +269,25 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .themes-container {
+    padding: 0 25px;
+  }
+
+  .themes-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+  }
+
+  .themes-title {
+    font-size: 36px;
+  }
+
+  .theme-content {
+    padding: 22px;
+  }
+}
+
 @media (max-width: 768px) {
   .themes {
     padding: 60px 0;
@@ -313,26 +341,90 @@
 }
 
 @media (max-width: 480px) {
+  .themes {
+    padding: 50px 0;
+  }
+
+  .themes-container {
+    padding: 0 15px;
+  }
+
   .themes-header {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
   }
 
   .themes-title {
-    font-size: 28px;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .themes-subtitle {
+    font-size: 15px;
+  }
+
+  .themes-grid {
+    gap: 15px;
+    margin-bottom: 35px;
+  }
+
+  .theme-card {
+    max-width: 100%;
+  }
+
+  .theme-image {
+    height: 160px;
   }
 
   .theme-content {
     padding: 16px;
   }
 
+  .theme-name {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
   .theme-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .theme-category {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .theme-rating {
+    font-size: 13px;
+  }
+
+  .theme-tags {
+    gap: 6px;
+    margin-bottom: 15px;
+  }
+
+  .theme-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .theme-footer {
+    gap: 12px;
+  }
+
+  .price-value {
+    font-size: 20px;
+  }
+
+  .buy-btn {
+    padding: 10px 16px;
+    font-size: 13px;
   }
 
   .load-more-btn {
-    padding: 14px 28px;
-    font-size: 15px;
+    padding: 12px 24px;
+    font-size: 14px;
   }
 }

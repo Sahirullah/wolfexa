@@ -8,47 +8,36 @@ import './Reviews.css';
 const Reviews = () => {
   const reviews = [
     {
-      id: 1,
-      name: 'Sarah Johnson',
-      role: 'Web Developer',
-      company: 'TechStart Inc.',
-      avatar: user1,
-      rating: 5,
-      review: 'Wolfexa has been a game-changer for our projects. The quality of themes is outstanding and the customer support is exceptional. Highly recommended!',
-      theme: 'ModernShop Pro',
-      date: '2 weeks ago'
-    },
-    {
       id: 2,
-      name: 'Michael Chen',
-      role: 'Creative Director',
-      company: 'Design Studio',
+      name: 'Fatima Khan',
+      role: 'Mathematics Student',
+      company: 'Allama Iqbal University',
       avatar: user2,
       rating: 5,
-      review: 'The portfolio themes are absolutely stunning. Clean code, responsive design, and easy customization. Worth every penny!',
-      theme: 'Creative Portfolio',
+      review: 'The mathematics solved papers are absolutely amazing. Clear solutions and step-by-step explanations. Perfect for exam preparation!',
+      theme: 'Mathematics Solved Papers',
       date: '1 month ago'
     },
     {
       id: 3,
-      name: 'Emily Rodriguez',
-      role: 'Marketing Manager',
-      company: 'Growth Agency',
+      name: 'Ali Raza',
+      role: 'Physics Student',
+      company: 'Virtual University',
       avatar: user3,
       rating: 4,
-      review: 'Great selection of business themes. The documentation is clear and implementation was smooth. Our client loved the final result.',
-      theme: 'Business Hub',
+      review: 'Great collection of physics materials. The lab reports and practical guides are very helpful. Saved me a lot of time during semester.',
+      theme: 'Physics Lab Reports',
       date: '3 weeks ago'
     },
     {
       id: 4,
-      name: 'David Thompson',
-      role: 'Freelance Designer',
-      company: 'Independent',
+      name: 'Ayesha Malik',
+      role: 'Islamic Studies Student',
+      company: 'Allama Iqbal University',
       avatar: user4,
       rating: 5,
-      review: 'As a freelancer, Wolfexa saves me tons of time. Professional themes with modern designs that my clients absolutely love.',
-      theme: 'Agency Pro',
+      review: 'As an Islamic Studies student, Virtual Library provides authentic and well-researched materials. The Quran and Hadith notes are excellent.',
+      theme: 'Islamic Studies Notes',
       date: '1 week ago'
     }
   ];
@@ -68,9 +57,9 @@ const Reviews = () => {
     <section className="reviews">
       <div className="reviews-container">
         <div className="reviews-header">
-          <h2 className="reviews-title">What Our Customers Say</h2>
+          <h2 className="reviews-title">What Our Students Say</h2>
           <p className="reviews-subtitle">
-            Join thousands of satisfied customers who trust Wolfexa for their web projects
+            Join thousands of students who trust Virtual Library for their academic success
           </p>
         </div>
 
@@ -83,12 +72,12 @@ const Reviews = () => {
             </div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">25K+</div>
-            <div className="stat-label">Happy Customers</div>
+            <div className="stat-number">5K+</div>
+            <div className="stat-label">Happy Students</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">50K+</div>
-            <div className="stat-label">Themes Sold</div>
+            <div className="stat-number">10K+</div>
+            <div className="stat-label">Study Materials</div>
           </div>
         </div>
 
@@ -118,10 +107,11 @@ const Reviews = () => {
 
               <div className="review-content">
                 <p className="review-text">"{review.review}"</p>
-                <div className="review-theme">
-                  <span className="theme-label">Theme purchased:</span>
-                  <span className="theme-name">{review.theme}</span>
-                </div>
+              </div>
+
+              <div className="review-theme">
+                <span className="theme-label">Material downloaded:</span>
+                <span className="theme-name">{review.theme}</span>
               </div>
 
               <div className="review-footer">
@@ -129,7 +119,7 @@ const Reviews = () => {
                   👍 Helpful
                 </button>
                 <span className="verified-badge">
-                  ✅ Verified Purchase
+                  ✅ Verified Student
                 </span>
               </div>
             </div>
@@ -138,12 +128,17 @@ const Reviews = () => {
 
         <div className="reviews-cta">
           <div className="cta-content">
-            <h3 className="cta-title">Ready to Join Our Happy Customers?</h3>
-            <p className="cta-subtitle">Browse our collection and find the perfect theme for your project</p>
-            <button className="cta-button">
-              Browse Themes
+            <h3 className="cta-title">Ready to Join Our Student Community?</h3>
+            <p className="cta-subtitle">Browse our collection and find the perfect study materials for your courses</p>
+            <a 
+              href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="cta-button"
+            >
+              Browse Materials
               <span className="btn-arrow">→</span>
-            </button>
+            </a>
           </div>
         </div>
       </div>
