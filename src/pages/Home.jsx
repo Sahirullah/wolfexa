@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Categories from '../components/Categories';
-import Themes from '../components/Themes';
+import Services from '../components/Themes';
 import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
 
@@ -12,7 +12,7 @@ const Home = () => {
       <Header />
       <Hero />
       <Categories />
-      <Themes />
+      <Services />
       <Reviews />
       <Footer />
     </div>

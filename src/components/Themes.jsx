@@ -1,141 +1,115 @@
 import React from 'react';
 import './Themes.css';
 
-// Import card images
-import card1Image from '../assets/card1.svg';
-import card2Image from '../assets/card2.svg';
-import card3Image from '../assets/card3.svg';
-
-const Themes = () => {
-  const themes = [
+const Services = () => {
+  const services = [
     {
       id: 1,
-      name: 'CS101 Complete Package',
-      category: 'Computer Science',
-      price: 'Free',
-      rating: 4.8,
-      reviews: 234,
-      image: card1Image,
-      tags: ['Handouts', 'Assignments', 'Past Papers']
+      title: 'Free Study Materials',
+      description: 'Access thousands of handouts, assignments, past papers, and notes from top Pakistani universities - completely free.',
+      icon: '📚',
+      features: [
+        'Handouts & Notes',
+        'Past Papers',
+        'Assignments',
+        'Study Guides'
+      ],
+      color: '#FF741F',
+      bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     },
     {
       id: 2,
-      name: 'Mathematics Solved Papers',
-      category: 'Mathematics',
-      price: 'Free',
-      rating: 4.9,
-      reviews: 189,
-      image: card2Image,
-      tags: ['Solutions', 'Formulas', 'Practice']
+      title: 'Web App Development',
+      description: 'Professional web application development services for businesses, startups, and educational institutions.',
+      icon: '💻',
+      features: [
+        'Custom Web Apps',
+        'Responsive Design',
+        'Modern Technologies',
+        'Full-Stack Solutions'
+      ],
+      color: '#667eea',
+      bgGradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
     },
     {
       id: 3,
-      name: 'Physics Lab Reports',
-      category: 'Physics',
-      price: 'Free',
-      rating: 4.7,
-      reviews: 312,
-      image: card3Image,
-      tags: ['Lab Work', 'Experiments', 'Reports']
-    },
-    {
-      id: 4,
-      name: 'Islamic Studies Notes',
-      category: 'Islamic Studies',
-      price: 'Free',
-      rating: 4.6,
-      reviews: 156,
-      image: card1Image,
-      tags: ['Quran', 'Hadith', 'Fiqh']
-    },
-    {
-      id: 5,
-      name: 'Chemistry Practical Guide',
-      category: 'Chemistry',
-      price: 'Free',
-      rating: 4.9,
-      reviews: 278,
-      image: card2Image,
-      tags: ['Practicals', 'Reactions', 'Formulas']
-    },
-    {
-      id: 6,
-      name: 'MCM Project Collection',
-      category: 'MCM',
-      price: 'Free',
-      rating: 4.8,
-      reviews: 203,
-      image: card3Image,
-      tags: ['Projects', 'Media', 'Communication']
+      title: 'Online Courses',
+      description: 'Comprehensive online courses designed to help students excel in their academic journey and career development.',
+      icon: '🎓',
+      features: [
+        'Expert Instructors',
+        'Interactive Content',
+        'Certificates',
+        'Lifetime Access'
+      ],
+      color: '#22c55e',
+      bgGradient: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)'
     }
   ];
 
   return (
-    <section className="themes">
-      <div className="themes-container">
-        <div className="themes-header">
-          <h2 className="themes-title">Featured Study Materials</h2>
-          <p className="themes-subtitle">
-            High-quality educational resources curated by top students and educators
+    <section className="services">
+      <div className="services-container">
+        <div className="services-header">
+          <h2 className="services-title">Our Services</h2>
+          <p className="services-subtitle">
+            Comprehensive solutions to support your educational and professional growth
           </p>
         </div>
         
-        <div className="themes-grid">
-          {themes.map((theme) => (
-            <div key={theme.id} className="theme-card">
-              <div className="theme-image">
-                <img src={theme.image} alt={theme.name} />
-                <div className="theme-overlay">
-                  <button className="preview-btn">
-                    <span className="btn-icon">👁️</span>
-                    Preview
-                  </button>
-                </div>
-              </div>
+        <div className="services-grid">
+          {services.map((service) => (
+            <div key={service.id} className="service-card" style={{'--service-color': service.color}}>
+              <div className="service-background" style={{background: service.bgGradient}}></div>
               
-              <div className="theme-content">
-                <div className="theme-header">
-                  <span className="theme-category">{theme.category}</span>
-                  <div className="theme-rating">
-                    <span className="rating-stars">⭐</span>
-                    <span className="rating-value">{theme.rating}</span>
-                    <span className="rating-reviews">({theme.reviews})</span>
-                  </div>
+              <div className="service-content">
+                <div className="service-icon-wrapper">
+                  <div className="service-icon">{service.icon}</div>
                 </div>
                 
-                <h3 className="theme-name">{theme.name}</h3>
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
                 
-                <div className="theme-tags">
-                  {theme.tags.map((tag, index) => (
-                    <span key={index} className="theme-tag">{tag}</span>
+                <div className="service-features">
+                  {service.features.map((feature, index) => (
+                    <div key={index} className="service-feature">
+                      <span className="feature-check">✓</span>
+                      <span className="feature-text">{feature}</span>
+                    </div>
                   ))}
                 </div>
                 
-                <div className="theme-footer">
-                  <div className="theme-price">
-                    <span className="price-value">{theme.price}</span>
-                  </div>
-                  <div className="theme-actions">
-                    <button className="buy-btn">
-                      <span className="btn-icon">📥</span>
-                      Download
-                    </button>
-                  </div>
+                <div className="service-action">
+                  <button className="service-btn">
+                    <span>Learn More</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="themes-footer">
-          <button className="load-more-btn">
-            Load More Materials
-            <span className="btn-arrow">↓</span>
-          </button>
+        <div className="services-footer">
+          <div className="services-cta">
+            <h3 className="cta-title">Ready to Get Started?</h3>
+            <p className="cta-subtitle">Join thousands of students and professionals who trust our services</p>
+            <a 
+              href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="cta-button"
+            >
+              Contact Us Today
+              <span className="btn-arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default Themes;
+export default Services;
