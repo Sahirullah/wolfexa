@@ -32,8 +32,8 @@ const Support = () => {
       ],
       action: 'Contact Us',
       link: '/contact',
-      color: '#3B82F6',
-      bgGradient: 'linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%)'
+      color: '#FF741F',
+      bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     },
     {
       id: 3,
@@ -48,8 +48,8 @@ const Support = () => {
       ],
       action: 'Get Help',
       link: 'https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy',
-      color: '#22C55E',
-      bgGradient: 'linear-gradient(135deg, #22C55E 0%, #16A34A 100%)'
+      color: '#FF741F',
+      bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     }
   ];
 
@@ -86,17 +86,30 @@ const Support = () => {
                 </div>
                 
                 <div className="support-action">
-                  <a 
-                    href={option.link}
-                    target={option.link.startsWith('http') ? '_blank' : '_self'}
-                    rel={option.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                    className="support-btn"
-                  >
-                    <span>{option.action}</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M7 17l9.2-9.2M17 17V7H7"/>
-                    </svg>
-                  </a>
+                  <div className="support-buttons">
+                    <a 
+                      href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="support-btn primary"
+                    >
+                      <span>VU Students</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                      </svg>
+                    </a>
+                    <a 
+                      href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="support-btn secondary"
+                    >
+                      <span>AIOU Students</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

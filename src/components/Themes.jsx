@@ -28,8 +28,8 @@ const Services = () => {
         'Modern Technologies',
         'Full-Stack Solutions'
       ],
-      color: '#667eea',
-      bgGradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      color: '#FF741F',
+      bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     },
     {
       id: 3,
@@ -42,8 +42,8 @@ const Services = () => {
         'Certificates',
         'Lifetime Access'
       ],
-      color: '#22c55e',
-      bgGradient: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)'
+      color: '#FF741F',
+      bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     }
   ];
 

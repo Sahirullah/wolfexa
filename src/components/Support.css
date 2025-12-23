@@ -172,13 +172,17 @@
   margin-top: auto;
 }
 
+.support-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .support-btn {
   width: 100%;
-  background: var(--support-color);
-  color: white;
-  padding: 16px 24px;
-  border-radius: 12px;
-  font-size: 15px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -187,18 +191,37 @@
   justify-content: center;
   gap: 8px;
   text-decoration: none;
-  border: none;
+  border: 2px solid transparent;
+}
+
+.support-btn.primary {
+  background: var(--support-color);
+  color: white;
+}
+
+.support-btn.secondary {
+  background: transparent;
+  color: var(--support-color);
+  border-color: var(--support-color);
 }
 
 .support-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.support-btn.primary:hover {
   filter: brightness(1.1);
 }
 
+.support-btn.secondary:hover {
+  background: var(--support-color);
+  color: white;
+}
+
 .support-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   transition: transform 0.3s ease;
 }
 
@@ -400,8 +423,8 @@
   }
 
   .support-btn {
-    padding: 14px 20px;
-    font-size: 14px;
+    padding: 12px 18px;
+    font-size: 13px;
   }
 
   .support-stats {
