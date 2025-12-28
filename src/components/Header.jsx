@@ -42,6 +42,14 @@ const Header = () => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
 
+  // Handle touch events for mobile dropdown
+  const handleDropdownClick = (e, dropdownName) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      handleDropdownToggle(dropdownName);
+    }
+  };
+
   return (
     <header className="header">
       {/* Top Bar */}
