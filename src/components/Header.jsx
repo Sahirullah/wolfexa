@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logoImage from '../assets/logo (3).png';
 import { useTheme } from '../context/ThemeContext';
@@ -6,7 +6,41 @@ import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
   const { isDarkMode, toggleTheme } = useTheme();
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest('.main-nav')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
+
+  // Close mobile menu on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleMobileMenu = (e) => {
+    e.stopPropagation();
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleDropdownToggle = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
+  };
 
   return (
     <header className="header">
@@ -59,16 +93,17 @@ const Header = () => {
         <div className="nav-container">
           <nav className={isMenuOpen ? 'nav-open' : ''}>
             <ul className="nav-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><a href="#reviews">Reviews</a></li>
-              <li><Link to="/contact">Contact Us</Link></li>
+              <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+              <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+              <li><a href="#reviews" onClick={() => setIsMenuOpen(false)}>Reviews</a></li>
+              <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
             </ul>
           </nav>
 
           <button 
             className="mobile-menu-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
           >
             <span></span>
             <span></span>

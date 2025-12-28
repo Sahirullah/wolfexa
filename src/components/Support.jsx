@@ -21,17 +21,17 @@ const Support = () => {
     },
     {
       id: 2,
-      title: 'Contact',
-      description: 'Get in touch with our team through multiple channels. We\'re here to help with any questions or concerns.',
-      icon: '📞',
+      title: 'Online Exams',
+      description: 'Practice with our comprehensive online exam system. Test your knowledge with past papers and mock exams.',
+      icon: '📝',
       features: [
-        'Email Support',
-        'Phone Support',
-        'WhatsApp Chat',
-        'Quick Response'
+        'Mock Exams',
+        'Past Papers',
+        'Timed Tests',
+        'Instant Results'
       ],
-      action: 'Contact Us',
-      link: '/contact',
+      action: 'Take Exam',
+      link: 'https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy',
       color: '#FF741F',
       bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     },
