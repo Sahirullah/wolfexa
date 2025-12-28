@@ -6,6 +6,7 @@ import './Header.css';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const { isDarkMode, toggleTheme } = useTheme();
 
@@ -15,17 +16,32 @@ const Header = () => {
       if (isMenuOpen && !event.target.closest('.main-nav')) {
         setIsMenuOpen(false);
       }
+      if (isCategoryMenuOpen && !event.target.closest('.category-nav')) {
+        setIsCategoryMenuOpen(false);
+        setActiveDropdown(null);
+        // Remove all active classes
+        document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
+      }
+      // Close dropdown when clicking outside
+      if (activeDropdown && !event.target.closest('.dropdown-menu') && !event.target.closest('.dropdown > a')) {
+        setActiveDropdown(null);
+        document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
+      }
     };
 
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isCategoryMenuOpen, activeDropdown]);
 
   // Close mobile menu on window resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setIsMenuOpen(false);
+        setIsCategoryMenuOpen(false);
+        setActiveDropdown(null);
+        // Remove all active classes
+        document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
       }
     };
 
@@ -38,6 +54,11 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleCategoryMenu = (e) => {
+    e.stopPropagation();
+    setIsCategoryMenuOpen(!isCategoryMenuOpen);
+  };
+
   const handleDropdownToggle = (dropdownName) => {
     setActiveDropdown(activeDropdown === dropdownName ? null : dropdownName);
   };
@@ -48,6 +69,32 @@ const Header = () => {
       e.preventDefault();
       handleDropdownToggle(dropdownName);
     }
+  };
+
+  // Handle mobile category item clicks
+  const handleCategoryClick = (e, hasDropdown, dropdownName) => {
+    if (window.innerWidth <= 768 && hasDropdown) {
+      e.preventDefault();
+      handleDropdownToggle(dropdownName);
+      
+      // Add active class to dropdown
+      const dropdownElement = e.target.closest('.dropdown');
+      if (dropdownElement) {
+        if (activeDropdown === dropdownName) {
+          dropdownElement.classList.remove('active');
+        } else {
+          // Remove active from all dropdowns
+          document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
+          dropdownElement.classList.add('active');
+        }
+      }
+    }
+  };
+
+  // Handle dropdown close
+  const handleDropdownClose = () => {
+    setActiveDropdown(null);
+    document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
   };
 
   return (
@@ -71,7 +118,7 @@ const Header = () => {
                 <span className="contact-icon">📞</span>
                 <div className="contact-text">
                   <span className="contact-label">Call Us for help!</span>
-                  <span className="contact-value">+234 9046631937</span>
+                  <span className="contact-value">+923191954292</span>
                 </div>
               </div>
               <div className="contact-item">
@@ -123,23 +170,41 @@ const Header = () => {
       {/* Category Navigation */}
       <div className="category-nav">
         <div className="category-container">
-          <ul className="category-links">
+          <button 
+            className={`category-menu-toggle ${isCategoryMenuOpen ? 'active' : ''}`}
+            onClick={toggleCategoryMenu}
+            aria-label="Toggle category menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <ul className={`category-links ${isCategoryMenuOpen ? 'category-open' : ''}`}>
             <li className="dropdown">
-              <a href="#islamic">
+              <a 
+                href="#islamic"
+                onClick={(e) => handleCategoryClick(e, true, 'islamic')}
+              >
                 Islamic <span className="dropdown-arrow">▼</span>
               </a>
-              <div className="dropdown-menu">
-                <a href="#quran">Quran Studies</a>
-                <a href="#hadith">Hadith</a>
-                <a href="#fiqh">Fiqh</a>
-                <a href="#tafseer">Tafseer</a>
+              <div className={`dropdown-menu ${activeDropdown === 'islamic' ? 'mobile-open' : ''}`}>
+                <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
+                <a href="#quran" onClick={handleDropdownClose}>Quran Studies</a>
+                <a href="#hadith" onClick={handleDropdownClose}>Hadith</a>
+                <a href="#fiqh" onClick={handleDropdownClose}>Fiqh</a>
+                <a href="#tafseer" onClick={handleDropdownClose}>Tafseer</a>
               </div>
             </li>
             <li className="dropdown">
-              <a href="#virtual-university">
+              <a 
+                href="#virtual-university"
+                onClick={(e) => handleCategoryClick(e, true, 'virtual-university')}
+              >
                 Virtual University <span className="dropdown-arrow">▼</span>
               </a>
-              <div className="dropdown-menu">
+              <div className={`dropdown-menu ${activeDropdown === 'virtual-university' ? 'mobile-open' : ''}`}>
+                <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
                 <div className="dropdown-submenu">
                   <a href="#handouts">Handouts <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
@@ -251,10 +316,14 @@ const Header = () => {
               </div>
             </li>
             <li className="dropdown">
-              <a href="#allama-iqbal-uni">
+              <a 
+                href="#allama-iqbal-uni"
+                onClick={(e) => handleCategoryClick(e, true, 'allama-iqbal-uni')}
+              >
                 Allama Iqbal Uni <span className="dropdown-arrow">▼</span>
               </a>
-              <div className="dropdown-menu">
+              <div className={`dropdown-menu ${activeDropdown === 'allama-iqbal-uni' ? 'mobile-open' : ''}`}>
+                <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
                 <div className="dropdown-submenu">
                   <a href="#aiou-handouts">Handouts <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
@@ -367,19 +436,29 @@ const Header = () => {
             </li>
             <li><a href="#courses">Courses</a></li>
             <li className="dropdown">
-              <a href="#biography">
+              <a 
+                href="#biography"
+                onClick={(e) => handleCategoryClick(e, true, 'biography')}
+              >
                 Biography <span className="dropdown-arrow">▼</span>
               </a>
-              <div className="dropdown-menu">
-                <a href="#scholars">Islamic Scholars</a>
-                <a href="#leaders">Leaders</a>
-                <a href="#personalities">Personalities</a>
+              <div className={`dropdown-menu ${activeDropdown === 'biography' ? 'mobile-open' : ''}`}>
+                <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
+                <a href="#scholars" onClick={handleDropdownClose}>Islamic Scholars</a>
+                <a href="#leaders" onClick={handleDropdownClose}>Leaders</a>
+                <a href="#personalities" onClick={handleDropdownClose}>Personalities</a>
               </div>
             </li>
             <li><a href="#blogs">Blogs</a></li>
             <li><a href="#opportunities">Opportunities</a></li>
           </ul>
         </div>
+        
+        {/* Overlay for dropdown */}
+        <div 
+          className={`dropdown-overlay ${activeDropdown ? 'active' : ''}`}
+          onClick={handleDropdownClose}
+        ></div>
       </div>
     </header>
   );
