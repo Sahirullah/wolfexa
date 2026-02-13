@@ -8,6 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCategoryMenuOpen, setIsCategoryMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
   const { isDarkMode, toggleTheme } = useTheme();
 
   // Close mobile menu when clicking outside
@@ -19,12 +20,14 @@ const Header = () => {
       if (isCategoryMenuOpen && !event.target.closest('.category-nav')) {
         setIsCategoryMenuOpen(false);
         setActiveDropdown(null);
+        setActiveSubmenu(null);
         // Remove all active classes
         document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
       }
       // Close dropdown when clicking outside
       if (activeDropdown && !event.target.closest('.dropdown-menu') && !event.target.closest('.dropdown > a')) {
         setActiveDropdown(null);
+        setActiveSubmenu(null);
         document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
       }
     };
@@ -40,6 +43,7 @@ const Header = () => {
         setIsMenuOpen(false);
         setIsCategoryMenuOpen(false);
         setActiveDropdown(null);
+        setActiveSubmenu(null);
         // Remove all active classes
         document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
       }
@@ -82,10 +86,98 @@ const Header = () => {
       if (dropdownElement) {
         if (activeDropdown === dropdownName) {
           dropdownElement.classList.remove('active');
+          setActiveSubmenu(null);
+          // Remove all submenu active classes
+          document.querySelectorAll('.dropdown-submenu').forEach(el => {
+            el.classList.remove('active');
+          });
         } else {
-          // Remove active from all dropdowns
-          document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
+          // Remove active from all dropdowns and submenus
+          document.querySelectorAll('.dropdown').forEach(el => el.classList.remove('active'));
+          document.querySelectorAll('.dropdown-submenu').forEach(el => {
+            el.classList.remove('active');
+          });
           dropdownElement.classList.add('active');
+          
+          // Auto-show first submenu for Virtual University
+          if (dropdownName === 'virtual-university') {
+            // Immediately set the first submenu as active
+            setActiveSubmenu('handouts');
+            
+            // Use a longer timeout to ensure DOM is ready
+            setTimeout(() => {
+              // Find and activate the first submenu
+              const firstSubmenu = document.querySelector('.dropdown-menu .dropdown-submenu:first-of-type');
+              if (firstSubmenu) {
+                firstSubmenu.classList.add('active');
+                
+                // Force the submenu to be visible with inline styles as backup
+                const submenuElement = firstSubmenu.querySelector('.submenu');
+                if (submenuElement) {
+                  submenuElement.style.opacity = '1';
+                  submenuElement.style.visibility = 'visible';
+                  submenuElement.style.transform = 'translateX(0)';
+                  submenuElement.style.display = 'block';
+                  submenuElement.style.position = 'fixed';
+                  submenuElement.style.top = '0';
+                  submenuElement.style.left = '60%';
+                  submenuElement.style.width = '40%';
+                  submenuElement.style.height = '100vh';
+                  submenuElement.style.zIndex = '1003';
+                }
+              }
+              
+              // Also try with data attribute
+              const dataSubmenu = document.querySelector('[data-submenu="handouts"]');
+              if (dataSubmenu) {
+                dataSubmenu.classList.add('active');
+              }
+            }, 200);
+          }
+        }
+      }
+    }
+  };
+
+  // Handle submenu item clicks on mobile
+  const handleSubmenuClick = (e, submenuName) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Set the active submenu
+      setActiveSubmenu(submenuName);
+      
+      // Remove active class from all submenu items
+      document.querySelectorAll('.dropdown-submenu').forEach(el => {
+        el.classList.remove('active');
+        // Hide all submenus first
+        const submenu = el.querySelector('.submenu');
+        if (submenu) {
+          submenu.style.opacity = '0';
+          submenu.style.visibility = 'hidden';
+          submenu.style.transform = 'translateX(100%)';
+        }
+      });
+      
+      // Add active class to the clicked submenu item
+      const submenuElement = e.target.closest('.dropdown-submenu');
+      if (submenuElement) {
+        submenuElement.classList.add('active');
+        
+        // Force the clicked submenu to be visible
+        const submenu = submenuElement.querySelector('.submenu');
+        if (submenu) {
+          submenu.style.opacity = '1';
+          submenu.style.visibility = 'visible';
+          submenu.style.transform = 'translateX(0)';
+          submenu.style.display = 'block';
+          submenu.style.position = 'fixed';
+          submenu.style.top = '0';
+          submenu.style.left = '60%';
+          submenu.style.width = '40%';
+          submenu.style.height = '100vh';
+          submenu.style.zIndex = '1003';
         }
       }
     }
@@ -94,7 +186,9 @@ const Header = () => {
   // Handle dropdown close
   const handleDropdownClose = () => {
     setActiveDropdown(null);
+    setActiveSubmenu(null);
     document.querySelectorAll('.dropdown.active').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.dropdown-submenu.active').forEach(el => el.classList.remove('active'));
   };
 
   return (
@@ -205,114 +299,133 @@ const Header = () => {
               </a>
               <div className={`dropdown-menu ${activeDropdown === 'virtual-university' ? 'mobile-open' : ''}`}>
                 <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
-                <div className="dropdown-submenu">
-                  <a href="#handouts">Handouts <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-handouts">CS Subjects</a>
-                    <a href="#bio-handouts">Biology</a>
-                    <a href="#chem-handouts">Chemistry</a>
-                    <a href="#phy-handouts">Physics</a>
-                    <a href="#islamyath-handouts">Islamyath</a>
-                    <a href="#math-handouts">Mathematics</a>
-                    <a href="#mcm-handouts">MCM</a>
+                <div className="dropdown-submenu" data-submenu="handouts">
+                  <a 
+                    href="#handouts"
+                    onClick={(e) => handleSubmenuClick(e, 'handouts')}
+                    className={activeSubmenu === 'handouts' ? 'active' : ''}
+                  >
+                    Handouts <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'handouts' ? 'submenu-open' : ''}`}>
+                    <a href="#cs-handouts" onClick={handleDropdownClose}>CS Subjects</a>
+                    <a href="#bio-handouts" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-handouts" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-handouts" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-handouts" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-handouts" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-handouts" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
                 <div className="dropdown-submenu">
-                  <a href="#highlighted-handouts">Highlighted Handouts <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-highlighted">CS Subjects</a>
-                    <a href="#bio-highlighted">Biology</a>
-                    <a href="#chem-highlighted">Chemistry</a>
-                    <a href="#phy-highlighted">Physics</a>
-                    <a href="#islamyath-highlighted">Islamyath</a>
-                    <a href="#math-highlighted">Mathematics</a>
-                    <a href="#mcm-highlighted">MCM</a>
+                  <a 
+                    href="#highlighted-handouts"
+                    onClick={(e) => handleSubmenuClick(e, 'highlighted-handouts')}
+                    className={activeSubmenu === 'highlighted-handouts' ? 'active' : ''}
+                  >
+                    Highlighted Handouts <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'highlighted-handouts' ? 'submenu-open' : ''}`}>
+                    <a href="#cs-highlighted" onClick={handleDropdownClose}>CS Subjects</a>
+                    <a href="#bio-highlighted" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-highlighted" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-highlighted" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-highlighted" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-highlighted" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-highlighted" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
                 <div className="dropdown-submenu">
-                  <a href="#midterm">Midterm <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-midterm">CS Subjects</a>
-                    <a href="#bio-midterm">Biology</a>
-                    <a href="#chem-midterm">Chemistry</a>
-                    <a href="#phy-midterm">Physics</a>
-                    <a href="#islamyath-midterm">Islamyath</a>
-                    <a href="#math-midterm">Mathematics</a>
-                    <a href="#mcm-midterm">MCM</a>
+                  <a 
+                    href="#midterm"
+                    onClick={(e) => handleSubmenuClick(e, 'midterm')}
+                    className={activeSubmenu === 'midterm' ? 'active' : ''}
+                  >
+                    Midterm <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'midterm' ? 'submenu-open' : ''}`}>
+                    <a href="#cs-midterm" onClick={handleDropdownClose}>CS Subjects</a>
+                    <a href="#bio-midterm" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-midterm" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-midterm" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-midterm" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-midterm" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-midterm" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
                 <div className="dropdown-submenu">
-                  <a href="#final-term">Final Term <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-final">CS Subjects</a>
-                    <a href="#bio-final">Biology</a>
-                    <a href="#chem-final">Chemistry</a>
-                    <a href="#phy-final">Physics</a>
-                    <a href="#islamyath-final">Islamyath</a>
-                    <a href="#math-final">Mathematics</a>
-                    <a href="#mcm-final">MCM</a>
+                  <a 
+                    href="#final-term"
+                    onClick={(e) => handleSubmenuClick(e, 'final-term')}
+                    className={activeSubmenu === 'final-term' ? 'active' : ''}
+                  >
+                    Final Term <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'final-term' ? 'submenu-open' : ''}`}>
+                    <a href="#cs-final" onClick={handleDropdownClose}>CS Subjects</a>
+                    <a href="#bio-final" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-final" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-final" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-final" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-final" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-final" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
                 <div className="dropdown-submenu">
-                  <a href="#quizzes">Quizzes <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-quizzes">CS Subjects</a>
-                    <a href="#bio-quizzes">Biology</a>
-                    <a href="#chem-quizzes">Chemistry</a>
-                    <a href="#phy-quizzes">Physics</a>
-                    <a href="#islamyath-quizzes">Islamyath</a>
-                    <a href="#math-quizzes">Mathematics</a>
-                    <a href="#mcm-quizzes">MCM</a>
+                  <a 
+                    href="#quizzes"
+                    onClick={(e) => handleSubmenuClick(e, 'quizzes')}
+                    className={activeSubmenu === 'quizzes' ? 'active' : ''}
+                  >
+                    Quizzes <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'quizzes' ? 'submenu-open' : ''}`}>
+                    <a href="#cs-quizzes" onClick={handleDropdownClose}>CS Subjects</a>
+                    <a href="#bio-quizzes" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-quizzes" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-quizzes" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-quizzes" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-quizzes" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-quizzes" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
                 <div className="dropdown-submenu">
-                  <a href="#assignments">Assignments <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-assignments">CS Subjects</a>
-                    <a href="#bio-assignments">Biology</a>
-                    <a href="#chem-assignments">Chemistry</a>
-                    <a href="#phy-assignments">Physics</a>
-                    <a href="#islamyath-assignments">Islamyath</a>
-                    <a href="#math-assignments">Mathematics</a>
-                    <a href="#mcm-assignments">MCM</a>
+                  <a 
+                    href="#assignments"
+                    onClick={(e) => handleSubmenuClick(e, 'assignments')}
+                    className={activeSubmenu === 'assignments' ? 'active' : ''}
+                  >
+                    Assignments <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'assignments' ? 'submenu-open' : ''}`}>
+                    <a href="#cs-assignments" onClick={handleDropdownClose}>CS Subjects</a>
+                    <a href="#bio-assignments" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-assignments" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-assignments" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-assignments" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-assignments" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-assignments" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
                 <div className="dropdown-submenu">
-                  <a href="#gdbs">GDBs <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-gdbs">CS Subjects</a>
-                    <a href="#bio-gdbs">Biology</a>
-                    <a href="#chem-gdbs">Chemistry</a>
-                    <a href="#phy-gdbs">Physics</a>
-                    <a href="#islamyath-gdbs">Islamyath</a>
-                    <a href="#math-gdbs">Mathematics</a>
-                    <a href="#mcm-gdbs">MCM</a>
+                  <a 
+                    href="#gdbs"
+                    onClick={(e) => handleSubmenuClick(e, 'gdbs')}
+                    className={activeSubmenu === 'gdbs' ? 'active' : ''}
+                  >
+                    GDBs <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'gdbs' ? 'submenu-open' : ''}`}>
+                    <a href="#cs-gdbs" onClick={handleDropdownClose}>CS Subjects</a>
+                    <a href="#bio-gdbs" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-gdbs" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-gdbs" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-gdbs" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-gdbs" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-gdbs" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
-                <div className="dropdown-submenu">
-                  <a href="#midterm-reviews">Midterm Student Reviews <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-midterm-reviews">CS Subjects</a>
-                    <a href="#bio-midterm-reviews">Biology</a>
-                    <a href="#chem-midterm-reviews">Chemistry</a>
-                    <a href="#phy-midterm-reviews">Physics</a>
-                    <a href="#islamyath-midterm-reviews">Islamyath</a>
-                    <a href="#math-midterm-reviews">Mathematics</a>
-                    <a href="#mcm-midterm-reviews">MCM</a>
-                  </div>
-                </div>
-                <div className="dropdown-submenu">
-                  <a href="#final-reviews">Final Term Student Reviews <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#cs-final-reviews">CS Subjects</a>
-                    <a href="#bio-final-reviews">Biology</a>
-                    <a href="#chem-final-reviews">Chemistry</a>
-                    <a href="#phy-final-reviews">Physics</a>
-                    <a href="#islamyath-final-reviews">Islamyath</a>
-                    <a href="#math-final-reviews">Mathematics</a>
-                    <a href="#mcm-final-reviews">MCM</a>
-                  </div>
-                </div>
+
               </div>
             </li>
             <li className="dropdown">
