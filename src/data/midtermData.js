@@ -1,4 +1,4 @@
-export const finalTermData = [
+export const midtermData = [
   // ACC - Accounting
   { id: 1, code: 'ACC311', title: 'Fundamentals of Auditing', category: 'acc', image: '📘' },
   { id: 2, code: 'ACC501', title: 'Business Finance', category: 'acc', image: '📘' },
@@ -55,14 +55,13 @@ export const finalTermData = [
   { id: 45, code: 'BT601', title: 'Virology', category: 'bt', image: '🧬' },
   { id: 46, code: 'BT603', title: 'Fermentation Technology', category: 'bt', image: '🧬' },
   { id: 47, code: 'BT605', title: 'Biosafety & Bioethics', category: 'bt', image: '🧬' },
-];
-
-// Continuing with more courses...
-export const finalTermDataPart2 = [
+  
   // CHE - Chemistry
   { id: 48, code: 'CHE201', title: 'Thermodynamics', category: 'che', image: '⚗️' },
   { id: 49, code: 'CHE301', title: 'Analytical Chemistry & Instrumentation', category: 'che', image: '⚗️' },
-  
+];
+
+export const midtermDataPart2 = [
   // CS - Computer Science (50-102)
   { id: 50, code: 'CS001', title: 'Computer Proficiency License', category: 'cs', image: '💻' },
   { id: 51, code: 'CS101', title: 'Introduction to Computing', category: 'cs', image: '💻' },
@@ -119,7 +118,7 @@ export const finalTermDataPart2 = [
   { id: 102, code: 'CS726', title: 'Information Retrieval Techniques', category: 'cs', image: '💻' },
 ];
 
-export const finalTermDataPart3 = [
+export const midtermDataPart3 = [
   // ECO - Economics
   { id: 103, code: 'ECO401', title: 'Economics', category: 'eco', image: '📊' },
   { id: 104, code: 'ECO402', title: 'Microeconomics', category: 'eco', image: '📊' },
@@ -130,48 +129,30 @@ export const finalTermDataPart3 = [
   { id: 109, code: 'ECO606', title: 'Mathematical Economics I', category: 'eco', image: '📊' },
   { id: 110, code: 'ECO607', title: 'Mathematical Economics II', category: 'eco', image: '📊' },
   { id: 111, code: 'ECO612', title: 'Population Economics', category: 'eco', image: '📊' },
-  
-  // EDU - Education
   { id: 112, code: 'EDU101', title: 'Education Course', category: 'edu', image: '🎓' },
   { id: 113, code: 'EDU201', title: 'Education Course', category: 'edu', image: '🎓' },
   { id: 114, code: 'EDU301', title: 'Education Course', category: 'edu', image: '🎓' },
-  
-  // ENG - English
   { id: 115, code: 'ENG001', title: 'English Course', category: 'eng', image: '📚' },
   { id: 116, code: 'ENG101', title: 'English Course', category: 'eng', image: '📚' },
   { id: 117, code: 'ENG201', title: 'English Course', category: 'eng', image: '📚' },
-  
-  // ETH - Ethics
   { id: 118, code: 'ETH201', title: 'Ethics (For Non-Muslims)', category: 'eth', image: '🧠' },
   { id: 119, code: 'ETH202', title: 'Ethics (For Non-Muslims)', category: 'eth', image: '🧠' },
-  
-  // FIN - Finance
   { id: 120, code: 'FIN611', title: 'Finance Course', category: 'fin', image: '💰' },
   { id: 121, code: 'FIN621', title: 'Finance Course', category: 'fin', image: '💰' },
   { id: 122, code: 'FIN622', title: 'Finance Course', category: 'fin', image: '💰' },
   { id: 123, code: 'FIN623', title: 'Finance Course', category: 'fin', image: '💰' },
   { id: 124, code: 'FIN624', title: 'Finance Course', category: 'fin', image: '💰' },
   { id: 125, code: 'FIN625', title: 'Finance Course', category: 'fin', image: '💰' },
-  
-  // GSC - General Science
   { id: 126, code: 'GSC101', title: 'General Science', category: 'gsc', image: '🌍' },
   { id: 127, code: 'GSC201', title: 'Teaching of General Science', category: 'gsc', image: '🌍' },
-  
-  // HRM - Human Resource Management
   { id: 128, code: 'HRM613', title: 'HRM Course', category: 'hrm', image: '👩‍💼' },
   { id: 129, code: 'HRM617', title: 'HRM Course', category: 'hrm', image: '👩‍💼' },
   { id: 130, code: 'HRM623', title: 'HRM Course', category: 'hrm', image: '👩‍💼' },
   { id: 131, code: 'HRM624', title: 'HRM Course', category: 'hrm', image: '👩‍💼' },
   { id: 132, code: 'HRM628', title: 'HRM Course', category: 'hrm', image: '👩‍💼' },
-  
-  // ISL - Islamic Studies
   { id: 133, code: 'ISL201', title: 'Islamic Studies', category: 'isl', image: '📿' },
   { id: 134, code: 'ISL202', title: 'Islamic Studies', category: 'isl', image: '📿' },
-  
-  // IT - Information Technology
   { id: 135, code: 'IT430', title: 'E-Commerce', category: 'it', image: '🌐' },
-  
-  // MCM - Mass Communication
   { id: 136, code: 'MCM101', title: 'Mass Communication Course', category: 'mcm', image: '📰' },
   { id: 137, code: 'MCM301', title: 'Mass Communication Course', category: 'mcm', image: '📰' },
   { id: 138, code: 'MCM304', title: 'Mass Communication Course', category: 'mcm', image: '📰' },
@@ -189,8 +170,6 @@ export const finalTermDataPart3 = [
   { id: 150, code: 'MCM601', title: 'Mass Communication Course', category: 'mcm', image: '📰' },
   { id: 151, code: 'MCM604', title: 'Mass Communication Course', category: 'mcm', image: '📰' },
   { id: 152, code: 'MCM610', title: 'Mass Communication Course', category: 'mcm', image: '📰' },
-  
-  // MGMT - Management
   { id: 153, code: 'MGMT611', title: 'Management Course', category: 'mgmt', image: '📋' },
   { id: 154, code: 'MGMT614', title: 'Management Course', category: 'mgmt', image: '📋' },
   { id: 155, code: 'MGMT622', title: 'Management Course', category: 'mgmt', image: '📋' },
@@ -202,7 +181,7 @@ export const finalTermDataPart3 = [
   { id: 161, code: 'MGMT630', title: 'Management Course', category: 'mgmt', image: '📋' },
 ];
 
-export const finalTermDataPart4 = [
+export const midtermDataPart4 = [
   // MGT - Business & Management
   { id: 162, code: 'MGT101', title: 'Business & Management Course', category: 'mgt', image: '📊' },
   { id: 163, code: 'MGT111', title: 'Business & Management Course', category: 'mgt', image: '📊' },
@@ -211,8 +190,6 @@ export const finalTermDataPart4 = [
   { id: 166, code: 'MGT301', title: 'Business & Management Course', category: 'mgt', image: '📊' },
   { id: 167, code: 'MGT401', title: 'Business & Management Course', category: 'mgt', image: '📊' },
   { id: 168, code: 'MGT402', title: 'Business & Management Course', category: 'mgt', image: '📊' },
-  
-  // MKT - Marketing
   { id: 169, code: 'MKT501', title: 'Marketing Course', category: 'mkt', image: '📈' },
   { id: 170, code: 'MKT530', title: 'Marketing Course', category: 'mkt', image: '📈' },
   { id: 171, code: 'MKT610', title: 'Marketing Course', category: 'mkt', image: '📈' },
@@ -220,8 +197,6 @@ export const finalTermDataPart4 = [
   { id: 173, code: 'MKT621', title: 'Marketing Course', category: 'mkt', image: '📈' },
   { id: 174, code: 'MKT624', title: 'Marketing Course', category: 'mkt', image: '📈' },
   { id: 175, code: 'MKT625', title: 'Marketing Course', category: 'mkt', image: '📈' },
-  
-  // MTH - Mathematics
   { id: 176, code: 'MTH001', title: 'Mathematics Course', category: 'mth', image: '📐' },
   { id: 177, code: 'MTH101', title: 'Calculus and Analytical Geometry', category: 'mth', image: '📐' },
   { id: 178, code: 'MTH102', title: 'Mathematics Course', category: 'mth', image: '📐' },
@@ -235,23 +210,13 @@ export const finalTermDataPart4 = [
   { id: 186, code: 'MTH645', title: 'Mathematics Course', category: 'mth', image: '📐' },
   { id: 187, code: 'MTH646', title: 'Mathematics Course', category: 'mth', image: '📐' },
   { id: 188, code: 'MTH647', title: 'Mathematics Course', category: 'mth', image: '📐' },
-  
-  // PAD - Public Administration
   { id: 189, code: 'PAD603', title: 'Governance, Democracy & Society', category: 'pad', image: '📜' },
-  
-  // PAK - Pakistan Studies
   { id: 190, code: 'PAK301', title: 'Pakistan Studies', category: 'pak', image: '🇵🇰' },
   { id: 191, code: 'PAK302', title: 'Pakistan Studies', category: 'pak', image: '🇵🇰' },
-  
-  // PHY - Physics
   { id: 192, code: 'PHY101', title: 'Physics', category: 'phy', image: '⚛️' },
   { id: 193, code: 'PHY301', title: 'Circuit Theory', category: 'phy', image: '⚛️' },
-  
-  // PSC - Political Science
   { id: 194, code: 'PSC201', title: 'Political Science Course', category: 'psc', image: '🗳️' },
   { id: 195, code: 'PSC401', title: 'Political Science Course', category: 'psc', image: '🗳️' },
-  
-  // PSY - Psychology
   { id: 196, code: 'PSY101', title: 'Psychology Course', category: 'psy', image: '🧠' },
   { id: 197, code: 'PSY401', title: 'Psychology Course', category: 'psy', image: '🧠' },
   { id: 198, code: 'PSY404', title: 'Psychology Course', category: 'psy', image: '🧠' },
@@ -266,8 +231,6 @@ export const finalTermDataPart4 = [
   { id: 207, code: 'PSY610', title: 'Psychology Course', category: 'psy', image: '🧠' },
   { id: 208, code: 'PSY631', title: 'Psychology Course', category: 'psy', image: '🧠' },
   { id: 209, code: 'PSY632', title: 'Psychology Course', category: 'psy', image: '🧠' },
-  
-  // SOC - Sociology
   { id: 210, code: 'SOC101', title: 'Sociology Course', category: 'soc', image: '👥' },
   { id: 211, code: 'SOC301', title: 'Sociology Course', category: 'soc', image: '👥' },
   { id: 212, code: 'SOC302', title: 'Sociology Course', category: 'soc', image: '👥' },
@@ -276,19 +239,13 @@ export const finalTermDataPart4 = [
   { id: 215, code: 'SOC403', title: 'Sociology Course', category: 'soc', image: '👥' },
   { id: 216, code: 'SOC404', title: 'Sociology Course', category: 'soc', image: '👥' },
   { id: 217, code: 'SOC602', title: 'Sociology Course', category: 'soc', image: '👥' },
-  
-  // STA - Statistics
   { id: 218, code: 'STA301', title: 'Statistics Course', category: 'sta', image: '📊' },
   { id: 219, code: 'STA404', title: 'Statistics Course', category: 'sta', image: '📊' },
   { id: 220, code: 'STA406', title: 'Statistics Course', category: 'sta', image: '📊' },
   { id: 221, code: 'STA630', title: 'Statistics Course', category: 'sta', image: '📊' },
   { id: 222, code: 'STA641', title: 'Statistics Course', category: 'sta', image: '📊' },
   { id: 223, code: 'STA642', title: 'Statistics Course', category: 'sta', image: '📊' },
-  
-  // URD - Urdu
   { id: 224, code: 'URD101', title: 'Urdu', category: 'urd', image: '📜' },
-  
-  // ZOO - Zoology
   { id: 225, code: 'ZOO101', title: 'Biological Techniques', category: 'zoo', image: '🐾' },
   { id: 226, code: 'ZOO201', title: 'Animal Diversity', category: 'zoo', image: '🐾' },
   { id: 227, code: 'ZOO202', title: 'Animal Diversity: Chordates', category: 'zoo', image: '🐾' },
@@ -305,15 +262,14 @@ export const finalTermDataPart4 = [
   { id: 238, code: 'ZOO512', title: 'Animal Diversity: Invertebrates', category: 'zoo', image: '🐾' },
 ];
 
-// Merge all parts into one array
-export const allFinalTermData = [
-  ...finalTermData,
-  ...finalTermDataPart2,
-  ...finalTermDataPart3,
-  ...finalTermDataPart4,
+export const allMidtermData = [
+  ...midtermData,
+  ...midtermDataPart2,
+  ...midtermDataPart3,
+  ...midtermDataPart4,
 ];
 
-export const finalTermCategories = [
+export const midtermCategories = [
   { id: 'all', name: 'All Courses' },
   { id: 'acc', name: 'ACC - Accounting' },
   { id: 'bif', name: 'BIF - Bioinformatics' },

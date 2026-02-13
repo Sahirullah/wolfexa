@@ -6,6 +6,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import VUHandout from './pages/VUHandout'
 import AIUHandout from './pages/AIUHandout'
+import Midterm from './pages/Midterm'
 import FinalTerm from './pages/FinalTerm'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/vu-handout" element={<VUHandout />} />
             <Route path="/aiu-handout" element={<AIUHandout />} />
+            <Route path="/midterm" element={<Midterm />} />
             <Route path="/final-term" element={<FinalTerm />} />
           </Routes>
         </div>

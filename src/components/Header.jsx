@@ -308,6 +308,24 @@ const Header = () => {
                     Handouts
                   </Link>
                 </div>
+                <div className="dropdown-submenu" data-submenu="midterm">
+                  <Link 
+                    to="/midterm"
+                    onClick={handleDropdownClose}
+                    className={activeSubmenu === 'midterm' ? 'active' : ''}
+                  >
+                    Midterm
+                  </Link>
+                </div>
+                <div className="dropdown-submenu" data-submenu="midterm">
+                  <Link 
+                    to="/midterm"
+                    onClick={handleDropdownClose}
+                    className={activeSubmenu === 'midterm' ? 'active' : ''}
+                  >
+                    Midterm
+                  </Link>
+                </div>
                 <div className="dropdown-submenu" data-submenu="final-term">
                   <Link 
                     to="/final-term"

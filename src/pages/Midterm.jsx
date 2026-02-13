@@ -1,38 +1,38 @@
 import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { allFinalTermData, finalTermCategories } from '../data/finalTermData';
-import './FinalTerm.css';
+import { allMidtermData, midtermCategories } from '../data/midtermData';
+import './Midterm.css';
 
-const FinalTerm = () => {
+const Midterm = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const papers = allFinalTermData.map(item => ({
+  const papers = allMidtermData.map(item => ({
     ...item,
-    description: `Download Final Term papers for ${item.title} (${item.code}) in PDF Format.`,
-    status: 'Final Term Papers',
+    description: `Download Midterm papers for ${item.title} (${item.code}) in PDF Format.`,
+    status: 'Midterm Papers',
     hasLecture: true
   }));
 
-  const categories = finalTermCategories;
+  const categories = midtermCategories;
 
   const filteredPapers = selectedCategory === 'all' 
     ? papers 
     : papers.filter(p => p.category === selectedCategory);
 
   return (
-    <div className="final-term-page">
+    <div className="midterm-page">
       <Header />
       
-      <div className="final-term-hero">
+      <div className="midterm-hero">
         <div className="hero-content">
-          <div className="hero-icon">📝</div>
-          <h1>FINAL TERM</h1>
-          <p>Virtual University Final Term Exam Study Metrials</p>
+          <div className="hero-icon">📋</div>
+          <h1>MIDTERM</h1>
+          <p>Virtual University Midterm Exam Study Materials</p>
         </div>
       </div>
 
-      <div className="final-term-container">
+      <div className="midterm-container">
         <div className="category-filter">
           <h2>Select Category</h2>
           <div className="filter-buttons">
@@ -88,4 +88,4 @@ const FinalTerm = () => {
   );
 };
 
-export default FinalTerm;
+export default Midterm;
