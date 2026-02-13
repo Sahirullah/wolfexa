@@ -300,38 +300,22 @@ const Header = () => {
               <div className={`dropdown-menu ${activeDropdown === 'virtual-university' ? 'mobile-open' : ''}`}>
                 <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
                 <div className="dropdown-submenu" data-submenu="handouts">
-                  <a 
-                    href="#handouts"
-                    onClick={(e) => handleSubmenuClick(e, 'handouts')}
+                  <Link 
+                    to="/vu-handout"
+                    onClick={handleDropdownClose}
                     className={activeSubmenu === 'handouts' ? 'active' : ''}
                   >
-                    Handouts <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'handouts' ? 'submenu-open' : ''}`}>
-                    <a href="#bio-handouts" onClick={handleDropdownClose}>Biology</a>
-                    <a href="#chem-handouts" onClick={handleDropdownClose}>Chemistry</a>
-                    <a href="#phy-handouts" onClick={handleDropdownClose}>Physics</a>
-                    <a href="#islamyath-handouts" onClick={handleDropdownClose}>Islamyath</a>
-                    <a href="#math-handouts" onClick={handleDropdownClose}>Mathematics</a>
-                    <a href="#mcm-handouts" onClick={handleDropdownClose}>MCM</a>
-                  </div>
+                    Handouts
+                  </Link>
                 </div>
-                <div className="dropdown-submenu">
-                  <a 
-                    href="#final-term"
-                    onClick={(e) => handleSubmenuClick(e, 'final-term')}
+                <div className="dropdown-submenu" data-submenu="final-term">
+                  <Link 
+                    to="/final-term"
+                    onClick={handleDropdownClose}
                     className={activeSubmenu === 'final-term' ? 'active' : ''}
                   >
-                    Final Term <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'final-term' ? 'submenu-open' : ''}`}>
-                    <a href="#bio-final" onClick={handleDropdownClose}>Biology</a>
-                    <a href="#chem-final" onClick={handleDropdownClose}>Chemistry</a>
-                    <a href="#phy-final" onClick={handleDropdownClose}>Physics</a>
-                    <a href="#islamyath-final" onClick={handleDropdownClose}>Islamyath</a>
-                    <a href="#math-final" onClick={handleDropdownClose}>Mathematics</a>
-                    <a href="#mcm-final" onClick={handleDropdownClose}>MCM</a>
-                  </div>
+                    Final Term
+                  </Link>
                 </div>
                 <div className="dropdown-submenu">
                   <a 
@@ -431,15 +415,7 @@ const Header = () => {
               <div className={`dropdown-menu ${activeDropdown === 'allama-iqbal-uni' ? 'mobile-open' : ''}`}>
                 <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
                 <div className="dropdown-submenu">
-                  <a href="#aiou-handouts">Handouts <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#aiou-bio-handouts">Biology</a>
-                    <a href="#aiou-chem-handouts">Chemistry</a>
-                    <a href="#aiou-phy-handouts">Physics</a>
-                    <a href="#aiou-islamyath-handouts">Islamyath</a>
-                    <a href="#aiou-math-handouts">Mathematics</a>
-                    <a href="#aiou-mcm-handouts">MCM</a>
-                  </div>
+                  <Link to="/aiu-handout" onClick={handleDropdownClose}>Handouts</Link>
                 </div>
                 <div className="dropdown-submenu">
                   <a href="#aiou-final-term">Final Term <span className="dropdown-arrow">▶</span></a>
