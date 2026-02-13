@@ -308,49 +308,12 @@ const Header = () => {
                     Handouts <span className="dropdown-arrow">▶</span>
                   </a>
                   <div className={`submenu ${activeSubmenu === 'handouts' ? 'submenu-open' : ''}`}>
-                    <a href="#cs-handouts" onClick={handleDropdownClose}>CS Subjects</a>
                     <a href="#bio-handouts" onClick={handleDropdownClose}>Biology</a>
                     <a href="#chem-handouts" onClick={handleDropdownClose}>Chemistry</a>
                     <a href="#phy-handouts" onClick={handleDropdownClose}>Physics</a>
                     <a href="#islamyath-handouts" onClick={handleDropdownClose}>Islamyath</a>
                     <a href="#math-handouts" onClick={handleDropdownClose}>Mathematics</a>
                     <a href="#mcm-handouts" onClick={handleDropdownClose}>MCM</a>
-                  </div>
-                </div>
-                <div className="dropdown-submenu">
-                  <a 
-                    href="#highlighted-handouts"
-                    onClick={(e) => handleSubmenuClick(e, 'highlighted-handouts')}
-                    className={activeSubmenu === 'highlighted-handouts' ? 'active' : ''}
-                  >
-                    Highlighted Handouts <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'highlighted-handouts' ? 'submenu-open' : ''}`}>
-                    <a href="#cs-highlighted" onClick={handleDropdownClose}>CS Subjects</a>
-                    <a href="#bio-highlighted" onClick={handleDropdownClose}>Biology</a>
-                    <a href="#chem-highlighted" onClick={handleDropdownClose}>Chemistry</a>
-                    <a href="#phy-highlighted" onClick={handleDropdownClose}>Physics</a>
-                    <a href="#islamyath-highlighted" onClick={handleDropdownClose}>Islamyath</a>
-                    <a href="#math-highlighted" onClick={handleDropdownClose}>Mathematics</a>
-                    <a href="#mcm-highlighted" onClick={handleDropdownClose}>MCM</a>
-                  </div>
-                </div>
-                <div className="dropdown-submenu">
-                  <a 
-                    href="#midterm"
-                    onClick={(e) => handleSubmenuClick(e, 'midterm')}
-                    className={activeSubmenu === 'midterm' ? 'active' : ''}
-                  >
-                    Midterm <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'midterm' ? 'submenu-open' : ''}`}>
-                    <a href="#cs-midterm" onClick={handleDropdownClose}>CS Subjects</a>
-                    <a href="#bio-midterm" onClick={handleDropdownClose}>Biology</a>
-                    <a href="#chem-midterm" onClick={handleDropdownClose}>Chemistry</a>
-                    <a href="#phy-midterm" onClick={handleDropdownClose}>Physics</a>
-                    <a href="#islamyath-midterm" onClick={handleDropdownClose}>Islamyath</a>
-                    <a href="#math-midterm" onClick={handleDropdownClose}>Mathematics</a>
-                    <a href="#mcm-midterm" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
                 <div className="dropdown-submenu">
@@ -362,7 +325,6 @@ const Header = () => {
                     Final Term <span className="dropdown-arrow">▶</span>
                   </a>
                   <div className={`submenu ${activeSubmenu === 'final-term' ? 'submenu-open' : ''}`}>
-                    <a href="#cs-final" onClick={handleDropdownClose}>CS Subjects</a>
                     <a href="#bio-final" onClick={handleDropdownClose}>Biology</a>
                     <a href="#chem-final" onClick={handleDropdownClose}>Chemistry</a>
                     <a href="#phy-final" onClick={handleDropdownClose}>Physics</a>
@@ -380,7 +342,6 @@ const Header = () => {
                     Quizzes <span className="dropdown-arrow">▶</span>
                   </a>
                   <div className={`submenu ${activeSubmenu === 'quizzes' ? 'submenu-open' : ''}`}>
-                    <a href="#cs-quizzes" onClick={handleDropdownClose}>CS Subjects</a>
                     <a href="#bio-quizzes" onClick={handleDropdownClose}>Biology</a>
                     <a href="#chem-quizzes" onClick={handleDropdownClose}>Chemistry</a>
                     <a href="#phy-quizzes" onClick={handleDropdownClose}>Physics</a>
@@ -398,7 +359,6 @@ const Header = () => {
                     Assignments <span className="dropdown-arrow">▶</span>
                   </a>
                   <div className={`submenu ${activeSubmenu === 'assignments' ? 'submenu-open' : ''}`}>
-                    <a href="#cs-assignments" onClick={handleDropdownClose}>CS Subjects</a>
                     <a href="#bio-assignments" onClick={handleDropdownClose}>Biology</a>
                     <a href="#chem-assignments" onClick={handleDropdownClose}>Chemistry</a>
                     <a href="#phy-assignments" onClick={handleDropdownClose}>Physics</a>
@@ -416,13 +376,46 @@ const Header = () => {
                     GDBs <span className="dropdown-arrow">▶</span>
                   </a>
                   <div className={`submenu ${activeSubmenu === 'gdbs' ? 'submenu-open' : ''}`}>
-                    <a href="#cs-gdbs" onClick={handleDropdownClose}>CS Subjects</a>
                     <a href="#bio-gdbs" onClick={handleDropdownClose}>Biology</a>
                     <a href="#chem-gdbs" onClick={handleDropdownClose}>Chemistry</a>
                     <a href="#phy-gdbs" onClick={handleDropdownClose}>Physics</a>
                     <a href="#islamyath-gdbs" onClick={handleDropdownClose}>Islamyath</a>
                     <a href="#math-gdbs" onClick={handleDropdownClose}>Mathematics</a>
                     <a href="#mcm-gdbs" onClick={handleDropdownClose}>MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a 
+                    href="#midterm-reviews"
+                    onClick={(e) => handleSubmenuClick(e, 'midterm-reviews')}
+                    className={activeSubmenu === 'midterm-reviews' ? 'active' : ''}
+                  >
+                    Midterm Student Reviews <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'midterm-reviews' ? 'submenu-open' : ''}`}>
+                    <a href="#bio-midterm-reviews" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-midterm-reviews" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-midterm-reviews" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-midterm-reviews" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-midterm-reviews" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-midterm-reviews" onClick={handleDropdownClose}>MCM</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a 
+                    href="#final-reviews"
+                    onClick={(e) => handleSubmenuClick(e, 'final-reviews')}
+                    className={activeSubmenu === 'final-reviews' ? 'active' : ''}
+                  >
+                    Final Term Student Reviews <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'final-reviews' ? 'submenu-open' : ''}`}>
+                    <a href="#bio-final-reviews" onClick={handleDropdownClose}>Biology</a>
+                    <a href="#chem-final-reviews" onClick={handleDropdownClose}>Chemistry</a>
+                    <a href="#phy-final-reviews" onClick={handleDropdownClose}>Physics</a>
+                    <a href="#islamyath-final-reviews" onClick={handleDropdownClose}>Islamyath</a>
+                    <a href="#math-final-reviews" onClick={handleDropdownClose}>Mathematics</a>
+                    <a href="#mcm-final-reviews" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
 
@@ -440,7 +433,6 @@ const Header = () => {
                 <div className="dropdown-submenu">
                   <a href="#aiou-handouts">Handouts <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
-                    <a href="#aiou-cs-handouts">CS Subjects</a>
                     <a href="#aiou-bio-handouts">Biology</a>
                     <a href="#aiou-chem-handouts">Chemistry</a>
                     <a href="#aiou-phy-handouts">Physics</a>
@@ -450,33 +442,8 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="dropdown-submenu">
-                  <a href="#aiou-highlighted-handouts">Highlighted Handouts <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#aiou-cs-highlighted">CS Subjects</a>
-                    <a href="#aiou-bio-highlighted">Biology</a>
-                    <a href="#aiou-chem-highlighted">Chemistry</a>
-                    <a href="#aiou-phy-highlighted">Physics</a>
-                    <a href="#aiou-islamyath-highlighted">Islamyath</a>
-                    <a href="#aiou-math-highlighted">Mathematics</a>
-                    <a href="#aiou-mcm-highlighted">MCM</a>
-                  </div>
-                </div>
-                <div className="dropdown-submenu">
-                  <a href="#aiou-midterm">Midterm <span className="dropdown-arrow">▶</span></a>
-                  <div className="submenu">
-                    <a href="#aiou-cs-midterm">CS Subjects</a>
-                    <a href="#aiou-bio-midterm">Biology</a>
-                    <a href="#aiou-chem-midterm">Chemistry</a>
-                    <a href="#aiou-phy-midterm">Physics</a>
-                    <a href="#aiou-islamyath-midterm">Islamyath</a>
-                    <a href="#aiou-math-midterm">Mathematics</a>
-                    <a href="#aiou-mcm-midterm">MCM</a>
-                  </div>
-                </div>
-                <div className="dropdown-submenu">
                   <a href="#aiou-final-term">Final Term <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
-                    <a href="#aiou-cs-final">CS Subjects</a>
                     <a href="#aiou-bio-final">Biology</a>
                     <a href="#aiou-chem-final">Chemistry</a>
                     <a href="#aiou-phy-final">Physics</a>
@@ -488,7 +455,6 @@ const Header = () => {
                 <div className="dropdown-submenu">
                   <a href="#aiou-quizzes">Quizzes <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
-                    <a href="#aiou-cs-quizzes">CS Subjects</a>
                     <a href="#aiou-bio-quizzes">Biology</a>
                     <a href="#aiou-chem-quizzes">Chemistry</a>
                     <a href="#aiou-phy-quizzes">Physics</a>
@@ -500,7 +466,6 @@ const Header = () => {
                 <div className="dropdown-submenu">
                   <a href="#aiou-assignments">Assignments <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
-                    <a href="#aiou-cs-assignments">CS Subjects</a>
                     <a href="#aiou-bio-assignments">Biology</a>
                     <a href="#aiou-chem-assignments">Chemistry</a>
                     <a href="#aiou-phy-assignments">Physics</a>
@@ -512,7 +477,6 @@ const Header = () => {
                 <div className="dropdown-submenu">
                   <a href="#aiou-gdbs">GDBs <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
-                    <a href="#aiou-cs-gdbs">CS Subjects</a>
                     <a href="#aiou-bio-gdbs">Biology</a>
                     <a href="#aiou-chem-gdbs">Chemistry</a>
                     <a href="#aiou-phy-gdbs">Physics</a>
@@ -524,7 +488,6 @@ const Header = () => {
                 <div className="dropdown-submenu">
                   <a href="#aiou-midterm-reviews">Midterm Student Reviews <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
-                    <a href="#aiou-cs-midterm-reviews">CS Subjects</a>
                     <a href="#aiou-bio-midterm-reviews">Biology</a>
                     <a href="#aiou-chem-midterm-reviews">Chemistry</a>
                     <a href="#aiou-phy-midterm-reviews">Physics</a>
@@ -536,7 +499,6 @@ const Header = () => {
                 <div className="dropdown-submenu">
                   <a href="#aiou-final-reviews">Final Term Student Reviews <span className="dropdown-arrow">▶</span></a>
                   <div className="submenu">
-                    <a href="#aiou-cs-final-reviews">CS Subjects</a>
                     <a href="#aiou-bio-final-reviews">Biology</a>
                     <a href="#aiou-chem-final-reviews">Chemistry</a>
                     <a href="#aiou-phy-final-reviews">Physics</a>

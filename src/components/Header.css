@@ -231,6 +231,7 @@ html {
   margin-left: 5px;
   font-size: 10px;
   transition: transform 0.3s ease;
+  display: none;
 }
 
 .dropdown:hover .dropdown-arrow {
@@ -301,12 +302,11 @@ html {
   z-index: 1001;
   max-height: 60vh;
   overflow-y: auto;
+  display: none !important;
 }
 
 .dropdown-submenu:hover .submenu {
-  opacity: 1;
-  visibility: visible;
-  right: -280px;
+  display: none !important;
 }
 
 .submenu a {
@@ -606,8 +606,8 @@ html {
   }
 
   .category-links.category-open {
-    max-height: 70vh;
-    overflow-y: auto;
+    max-height: none;
+    overflow-y: visible;
   }
 
   .category-links li {
@@ -675,9 +675,9 @@ html {
     top: 0;
     left: -100%;
     width: 60%;
-    height: 100vh;
+    height: auto;
     max-height: none;
-    overflow-y: auto;
+    overflow-y: visible;
     overflow-x: hidden;
     background: linear-gradient(135deg, #c53030 0%, #9c2a2a 100%);
     transition: left 0.3s ease;
@@ -729,7 +729,7 @@ html {
     right: 0;
     left: auto;
     width: 50%;
-    height: 100vh;
+    height: auto;
     background: linear-gradient(135deg, #3d4852 0%, #2d3748 100%);
     z-index: 1003;
     padding-top: 60px;
@@ -738,7 +738,7 @@ html {
     visibility: hidden;
     transform: translateX(100%);
     transition: all 0.3s ease;
-    overflow-y: auto;
+    overflow-y: visible;
     overflow-x: hidden;
     display: block;
     max-height: none;
@@ -747,38 +747,22 @@ html {
   /* Show submenu when parent dropdown item is active or hovered */
   .dropdown-submenu:hover .submenu,
   .dropdown-submenu.active .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
+    display: none !important;
   }
 
   /* Ensure all submenus are visible on mobile when their parent is active */
   .dropdown-menu.mobile-open .dropdown-submenu.active .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
-    display: block !important;
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    left: auto !important;
-    width: 50% !important;
-    height: 100vh !important;
-    z-index: 1003 !important;
+    display: none !important;
   }
 
   /* Mobile specific submenu behavior */
   .dropdown-submenu.active .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
+    display: none !important;
   }
   
   /* Force first submenu to show when Virtual University opens */
   .dropdown-menu.mobile-open .dropdown-submenu:first-of-type.active .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
+    display: none !important;
   }
 
   .submenu a {
@@ -802,18 +786,11 @@ html {
 
   /* Force submenu to show when dropdown is open on mobile */
   .dropdown-menu.mobile-open .dropdown-submenu:first-of-type .submenu {
-    opacity: 1 !important;
+    display: none !important;
   }
 
   .submenu a:hover {
     background: #FF741F;
-  }
-
-  /* Force submenu to show when dropdown is open on mobile */
-  .dropdown-menu.mobile-open .dropdown-submenu:first-of-type .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
   }
 
   /* Close button */
@@ -1096,20 +1073,7 @@ html {
 @media (max-width: 768px) {
   /* Make sure all submenus are properly positioned and visible when active */
   .dropdown-submenu.active .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
-    display: block !important;
-    position: fixed !important;
-    top: 0 !important;
-    right: 0 !important;
-    left: auto !important;
-    width: 50% !important;
-    height: 100vh !important;
-    z-index: 1003 !important;
-    background: linear-gradient(135deg, #3d4852 0%, #2d3748 100%) !important;
-    padding-top: 60px !important;
-    overflow-y: auto !important;
+    display: none !important;
   }
   
   /* Force first submenu to show when Virtual University dropdown opens */
@@ -1118,18 +1082,12 @@ html {
   }
   
   .dropdown-menu.mobile-open .dropdown-submenu:first-of-type .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
-    display: block !important;
+    display: none !important;
   }
   
   /* Ensure submenu links are visible */
   .dropdown-menu.mobile-open .dropdown-submenu .submenu a {
-    display: block !important;
-    padding: 16px 25px !important;
-    color: white !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: none !important;
   }
 }
 /* Additional mobile submenu fixes */
@@ -1146,59 +1104,39 @@ html {
   
   /* Make sure the first submenu shows immediately */
   .dropdown-menu.mobile-open .dropdown-submenu:first-of-type .submenu {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
-    display: block !important;
+    display: none !important;
   }
   
   /* Override any transitions that might interfere */
   .dropdown-menu.mobile-open .submenu {
-    transition: none !important;
+    display: none !important;
   }
   
   /* Restore transitions after initial load */
   .dropdown-menu.mobile-open .submenu.loaded {
-    transition: all 0.3s ease !important;
+    display: none !important;
   }
 }
 /* Custom scrollbar styling for mobile dropdowns */
 @media (max-width: 768px) {
-  /* Webkit browsers (Chrome, Safari, Edge) */
+  /* Remove scrollbars completely - show all content */
   .dropdown-menu::-webkit-scrollbar,
   .submenu::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .dropdown-menu::-webkit-scrollbar-track,
-  .submenu::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-  }
-
-  .dropdown-menu::-webkit-scrollbar-thumb,
-  .submenu::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
-  }
-
-  .dropdown-menu::-webkit-scrollbar-thumb:hover,
-  .submenu::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
+    display: none;
   }
 
   /* Firefox */
   .dropdown-menu,
   .submenu {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+    scrollbar-width: none;
   }
 
-  /* Remove horizontal scrollbar completely */
+  /* Remove all scrolling - show all content */
   .dropdown-menu,
   .submenu {
     overflow-x: hidden !important;
-    overflow-y: auto !important;
+    overflow-y: visible !important;
+    max-height: none !important;
   }
 
   /* Ensure content doesn't cause horizontal overflow */
