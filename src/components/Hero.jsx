@@ -28,15 +28,15 @@ const Hero = () => {
           <div className="hero-stats">
             <div className="stat">
               <span className="stat-number">10K+</span>
-              <span className="stat-label">Study Materials</span>
+              <span className="stat-label"><i className="fas fa-book"></i> Study Materials</span>
             </div>
             <div className="stat">
               <span className="stat-number">5K+</span>
-              <span className="stat-label">Happy Students</span>
+              <span className="stat-label"><i className="fas fa-smile"></i> Happy Students</span>
             </div>
             <div className="stat">
               <span className="stat-number">50K+</span>
-              <span className="stat-label">Downloads</span>
+              <span className="stat-label"><i className="fas fa-download"></i> Downloads</span>
             </div>
           </div>
         </div>

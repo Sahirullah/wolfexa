@@ -95,7 +95,7 @@ const About = () => {
             <h2 className="section-title">Our Values</h2>
             <div className="values-grid">
               <div className="value-card">
-                <div className="value-icon">🎓</div>
+                <div className="value-icon"><i className="fas fa-graduation-cap"></i></div>
                 <h3 className="value-title">Academic Excellence</h3>
                 <p className="value-description">
                   We curate only the highest quality educational materials from top-performing 
@@ -103,7 +103,7 @@ const About = () => {
                 </p>
               </div>
               <div className="value-card">
-                <div className="value-icon">🤝</div>
+                <div className="value-icon"><i className="fas fa-heart"></i></div>
                 <h3 className="value-title">Community Support</h3>
                 <p className="value-description">
                   Building a supportive community where students help each other succeed 
@@ -111,7 +111,7 @@ const About = () => {
                 </p>
               </div>
               <div className="value-card">
-                <div className="value-icon">💡</div>
+                <div className="value-icon"><i className="fas fa-lightbulb"></i></div>
                 <h3 className="value-title">Innovation</h3>
                 <p className="value-description">
                   Continuously improving our platform to provide better learning experiences 
@@ -119,43 +119,12 @@ const About = () => {
                 </p>
               </div>
               <div className="value-card">
-                <div className="value-icon">🌟</div>
+                <div className="value-icon"><i className="fas fa-star"></i></div>
                 <h3 className="value-title">Accessibility</h3>
                 <p className="value-description">
                   Making quality education accessible to all students, regardless of their 
                   background or circumstances.
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="about-team">
-          <div className="about-container">
-            <h2 className="section-title">Meet Our Team</h2>
-            <p className="team-description">
-              Our dedicated team of educators, developers, and student advocates work tirelessly 
-              to bring you the best educational resources.
-            </p>
-            <div className="team-grid">
-              <div className="team-member">
-                <div className="member-avatar">👨‍💻</div>
-                <h3 className="member-name">Ahmad Hassan</h3>
-                <p className="member-role">Founder & CEO</p>
-                <p className="member-bio">Computer Science graduate passionate about educational technology</p>
-              </div>
-              <div className="team-member">
-                <div className="member-avatar">👩‍🏫</div>
-                <h3 className="member-name">Fatima Khan</h3>
-                <p className="member-role">Academic Director</p>
-                <p className="member-bio">Former university lecturer with 10+ years of teaching experience</p>
-              </div>
-              <div className="team-member">
-                <div className="member-avatar">👨‍🎓</div>
-                <h3 className="member-name">Ali Raza</h3>
-                <p className="member-role">Content Manager</p>
-                <p className="member-bio">Masters in Education, specializing in curriculum development</p>
               </div>
             </div>
           </div>

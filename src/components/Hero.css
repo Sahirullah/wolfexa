@@ -155,6 +155,15 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #FFFFFF !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.stat-label i {
+  font-size: 18px;
+  color: #FF741F;
 }
 
 .hero-image {

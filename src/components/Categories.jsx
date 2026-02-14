@@ -7,7 +7,7 @@ const Categories = () => {
       id: 1,
       name: 'Computer Science',
       count: '2,450+',
-      icon: '💻',
+      icon: 'fas fa-laptop-code',
       description: 'Programming & CS materials',
       color: '#FF741F'
     },
@@ -15,7 +15,7 @@ const Categories = () => {
       id: 2,
       name: 'Mathematics',
       count: '1,890+',
-      icon: '📐',
+      icon: 'fas fa-square-root-alt',
       description: 'Math formulas & solutions',
       color: '#ff8c42'
     },
@@ -23,7 +23,7 @@ const Categories = () => {
       id: 3,
       name: 'Physics',
       count: '1,200+',
-      icon: '⚛️',
+      icon: 'fas fa-atom',
       description: 'Physics concepts & experiments',
       color: '#e5650e'
     },
@@ -31,7 +31,7 @@ const Categories = () => {
       id: 4,
       name: 'Chemistry',
       count: '1,650+',
-      icon: '🧪',
+      icon: 'fas fa-flask',
       description: 'Chemical reactions & formulas',
       color: '#FF741F'
     },
@@ -39,7 +39,7 @@ const Categories = () => {
       id: 5,
       name: 'Biology',
       count: '980+',
-      icon: '🧬',
+      icon: 'fas fa-dna',
       description: 'Life sciences & biology',
       color: '#ff8c42'
     },
@@ -47,7 +47,7 @@ const Categories = () => {
       id: 6,
       name: 'Islamic Studies',
       count: '750+',
-      icon: '🕌',
+      icon: 'fas fa-mosque',
       description: 'Islamic knowledge & studies',
       color: '#e5650e'
     },
@@ -55,7 +55,7 @@ const Categories = () => {
       id: 7,
       name: 'MCM',
       count: '620+',
-      icon: '📺',
+      icon: 'fas fa-tv',
       description: 'Mass Communication & Media',
       color: '#FF741F'
     },
@@ -63,7 +63,7 @@ const Categories = () => {
       id: 8,
       name: 'General',
       count: '540+',
-      icon: '📚',
+      icon: 'fas fa-book',
       description: 'General study materials',
       color: '#ff8c42'
     }
@@ -83,7 +83,7 @@ const Categories = () => {
           {categories.map((category) => (
             <div key={category.id} className="category-card">
               <div className="category-icon" style={{ backgroundColor: category.color }}>
-                <span>{category.icon}</span>
+                <i className={category.icon}></i>
               </div>
               <div className="category-content">
                 <h3 className="category-name">{category.name}</h3>

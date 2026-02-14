@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import logoImage from '../assets/logo (3).png';
 import './Contact.css';
+
+const FAQItem = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="faq-accordion-item">
+      <button 
+        className={`faq-question ${isOpen ? 'active' : ''}`}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="faq-question-text">{question}</span>
+        <span className="faq-toggle-icon">
+          <i className={`fas fa-chevron-down ${isOpen ? 'rotate' : ''}`}></i>
+        </span>
+      </button>
+      <div className={`faq-answer ${isOpen ? 'open' : ''}`}>
+        <div className="faq-answer-content">
+          {answer}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -235,37 +257,35 @@ const Contact = () => {
       {/* FAQ Section */}
       <section className="faq-section">
         <div className="container">
-          <h2>Frequently Asked Questions</h2>
-          <div className="faq-grid">
-            <div className="faq-item">
-              <h3>How can I access study materials?</h3>
-              <p>All study materials are available for free on our website. Simply navigate to your university section (VU or AIOU) and browse by subject or material type.</p>
-            </div>
-
-            <div className="faq-item">
-              <h3>Are the materials updated regularly?</h3>
-              <p>Yes, we continuously update our materials with the latest handouts, past papers, and study resources to ensure students have access to current content.</p>
-            </div>
-
-            <div className="faq-item">
-              <h3>Can I request specific study materials?</h3>
-              <p>Absolutely! Use the contact form above to request specific materials, and we'll do our best to add them to our collection.</p>
-            </div>
-
-            <div className="faq-item">
-              <h3>Is there a mobile app available?</h3>
-              <p>Currently, our website is fully responsive and works great on mobile devices. We're working on a dedicated mobile app for an even better experience.</p>
-            </div>
-
-            <div className="faq-item">
-              <h3>How can I contribute to the platform?</h3>
-              <p>We welcome contributions! You can share study materials, provide feedback, or help other students through our WhatsApp community group.</p>
-            </div>
-
-            <div className="faq-item">
-              <h3>What subjects are covered?</h3>
-              <p>We cover a wide range of subjects including Computer Science, Biology, Chemistry, Physics, Mathematics, Islamic Studies, and many more.</p>
-            </div>
+          <div className="faq-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about our platform and services</p>
+          </div>
+          <div className="faq-accordion">
+            <FAQItem 
+              question="How can I access study materials?"
+              answer="All study materials are available for free on our website. Simply navigate to your university section (VU or AIOU) and browse by subject or material type. You can download materials directly without any registration required."
+            />
+            <FAQItem 
+              question="Are the materials updated regularly?"
+              answer="Yes, we continuously update our materials with the latest handouts, past papers, and study resources to ensure students have access to current content. We add new materials weekly based on student requests and academic calendars."
+            />
+            <FAQItem 
+              question="Can I request specific study materials?"
+              answer="Absolutely! Use the contact form above to request specific materials, and we'll do our best to add them to our collection. We prioritize requests from our community and typically fulfill them within 2-3 business days."
+            />
+            <FAQItem 
+              question="Is there a mobile app available?"
+              answer="Currently, our website is fully responsive and works great on mobile devices. We're working on a dedicated mobile app for an even better experience. You can bookmark our site for quick access on your phone."
+            />
+            <FAQItem 
+              question="How can I contribute to the platform?"
+              answer="We welcome contributions! You can share study materials, provide feedback, or help other students through our WhatsApp community group. Contributors get special recognition and access to exclusive resources."
+            />
+            <FAQItem 
+              question="What subjects are covered?"
+              answer="We cover a wide range of subjects including Computer Science, Biology, Chemistry, Physics, Mathematics, Islamic Studies, and many more. New subjects are added regularly based on student demand and university curricula."
+            />
           </div>
         </div>
       </section>

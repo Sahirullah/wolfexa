@@ -7,7 +7,7 @@ const Services = () => {
       id: 1,
       title: 'Free Study Materials',
       description: 'Access thousands of handouts, assignments, past papers, and notes from top Pakistani universities - completely free.',
-      icon: '📚',
+      icon: 'fas fa-book-open',
       features: [
         'Handouts & Notes',
         'Past Papers',
@@ -21,7 +21,7 @@ const Services = () => {
       id: 2,
       title: 'Web App Development',
       description: 'Professional web application development services for businesses, startups, and educational institutions.',
-      icon: '💻',
+      icon: 'fas fa-code',
       features: [
         'Custom Web Apps',
         'Responsive Design',
@@ -35,7 +35,7 @@ const Services = () => {
       id: 3,
       title: 'Online Courses',
       description: 'Comprehensive online courses designed to help students excel in their academic journey and career development.',
-      icon: '🎓',
+      icon: 'fas fa-graduation-cap',
       features: [
         'Expert Instructors',
         'Interactive Content',
@@ -64,7 +64,7 @@ const Services = () => {
               
               <div className="service-content">
                 <div className="service-icon-wrapper">
-                  <div className="service-icon">{service.icon}</div>
+                  <div className="service-icon"><i className={service.icon}></i></div>
                 </div>
                 
                 <h3 className="service-title">{service.title}</h3>
