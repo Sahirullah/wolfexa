@@ -8,6 +8,8 @@ import VUHandout from './pages/VUHandout'
 import AIUHandout from './pages/AIUHandout'
 import Midterm from './pages/Midterm'
 import FinalTerm from './pages/FinalTerm'
+import Quizzes from './pages/Quizzes'
+import Assignment from './pages/Assignment'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="/aiu-handout" element={<AIUHandout />} />
             <Route path="/midterm" element={<Midterm />} />
             <Route path="/final-term" element={<FinalTerm />} />
+            <Route path="/quizzes" element={<Quizzes />} />
+            <Route path="/assignment" element={<Assignment />} />
           </Routes>
         </div>
       </Router>

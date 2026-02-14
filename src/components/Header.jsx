@@ -335,39 +335,23 @@ const Header = () => {
                     Final Term
                   </Link>
                 </div>
-                <div className="dropdown-submenu">
-                  <a 
-                    href="#quizzes"
-                    onClick={(e) => handleSubmenuClick(e, 'quizzes')}
+                <div className="dropdown-submenu" data-submenu="quizzes">
+                  <Link 
+                    to="/quizzes"
+                    onClick={handleDropdownClose}
                     className={activeSubmenu === 'quizzes' ? 'active' : ''}
                   >
-                    Quizzes <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'quizzes' ? 'submenu-open' : ''}`}>
-                    <a href="#bio-quizzes" onClick={handleDropdownClose}>Biology</a>
-                    <a href="#chem-quizzes" onClick={handleDropdownClose}>Chemistry</a>
-                    <a href="#phy-quizzes" onClick={handleDropdownClose}>Physics</a>
-                    <a href="#islamyath-quizzes" onClick={handleDropdownClose}>Islamyath</a>
-                    <a href="#math-quizzes" onClick={handleDropdownClose}>Mathematics</a>
-                    <a href="#mcm-quizzes" onClick={handleDropdownClose}>MCM</a>
-                  </div>
+                    Quizzes
+                  </Link>
                 </div>
-                <div className="dropdown-submenu">
-                  <a 
-                    href="#assignments"
-                    onClick={(e) => handleSubmenuClick(e, 'assignments')}
+                <div className="dropdown-submenu" data-submenu="assignments">
+                  <Link 
+                    to="/assignment"
+                    onClick={handleDropdownClose}
                     className={activeSubmenu === 'assignments' ? 'active' : ''}
                   >
-                    Assignments <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'assignments' ? 'submenu-open' : ''}`}>
-                    <a href="#bio-assignments" onClick={handleDropdownClose}>Biology</a>
-                    <a href="#chem-assignments" onClick={handleDropdownClose}>Chemistry</a>
-                    <a href="#phy-assignments" onClick={handleDropdownClose}>Physics</a>
-                    <a href="#islamyath-assignments" onClick={handleDropdownClose}>Islamyath</a>
-                    <a href="#math-assignments" onClick={handleDropdownClose}>Mathematics</a>
-                    <a href="#mcm-assignments" onClick={handleDropdownClose}>MCM</a>
-                  </div>
+                    Assignments
+                  </Link>
                 </div>
                 <div className="dropdown-submenu">
                   <a 
