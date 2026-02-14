@@ -317,15 +317,6 @@ const Header = () => {
                     Midterm
                   </Link>
                 </div>
-                <div className="dropdown-submenu" data-submenu="midterm">
-                  <Link 
-                    to="/midterm"
-                    onClick={handleDropdownClose}
-                    className={activeSubmenu === 'midterm' ? 'active' : ''}
-                  >
-                    Midterm
-                  </Link>
-                </div>
                 <div className="dropdown-submenu" data-submenu="final-term">
                   <Link 
                     to="/final-term"
@@ -471,7 +462,49 @@ const Header = () => {
                 </div>
               </div>
             </li>
-            <li><a href="#courses">Courses</a></li>
+            <li className="dropdown">
+              <a 
+                href="#courses"
+                onClick={(e) => handleCategoryClick(e, true, 'courses')}
+              >
+                Courses <span className="dropdown-arrow">▼</span>
+              </a>
+              <div className={`dropdown-menu ${activeDropdown === 'courses' ? 'mobile-open' : ''}`}>
+                <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
+                <div className="dropdown-submenu">
+                  <a 
+                    href="#web-development"
+                    onClick={(e) => handleSubmenuClick(e, 'web-development')}
+                    className={activeSubmenu === 'web-development' ? 'active' : ''}
+                  >
+                    Web Development <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'web-development' ? 'submenu-open' : ''}`}>
+                    <a href="#web-dev-intro" onClick={handleDropdownClose}>Introduction to Web Dev</a>
+                    <a href="#web-dev-html-css" onClick={handleDropdownClose}>HTML & CSS</a>
+                    <a href="#web-dev-javascript" onClick={handleDropdownClose}>JavaScript</a>
+                    <a href="#web-dev-react" onClick={handleDropdownClose}>React</a>
+                    <a href="#web-dev-backend" onClick={handleDropdownClose}>Backend Development</a>
+                  </div>
+                </div>
+                <div className="dropdown-submenu">
+                  <a 
+                    href="#research-study"
+                    onClick={(e) => handleSubmenuClick(e, 'research-study')}
+                    className={activeSubmenu === 'research-study' ? 'active' : ''}
+                  >
+                    Research Study <span className="dropdown-arrow">▶</span>
+                  </a>
+                  <div className={`submenu ${activeSubmenu === 'research-study' ? 'submenu-open' : ''}`}>
+                    <a href="#research-methodology" onClick={handleDropdownClose}>Research Methodology</a>
+                    <a href="#literature-review" onClick={handleDropdownClose}>Literature Review</a>
+                    <a href="#data-analysis" onClick={handleDropdownClose}>Data Analysis</a>
+                    <a href="#academic-writing" onClick={handleDropdownClose}>Academic Writing</a>
+                    <a href="#research-ethics" onClick={handleDropdownClose}>Research Ethics</a>
+                  </div>
+                </div>
+              </div>
+            </li>
             <li className="dropdown">
               <a 
                 href="#biography"

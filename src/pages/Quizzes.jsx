@@ -24,6 +24,14 @@ const Quizzes = () => {
     <div className="quizzes-page">
       <Header />
       
+      <div className="quizzes-hero">
+        <div className="hero-content">
+          <div className="hero-icon">❓</div>
+          <h1>Quizzes</h1>
+          <p>Test your knowledge with our comprehensive quiz collection</p>
+        </div>
+      </div>
+      
       <div className="quizzes-container">
         <div className="category-filter">
           <h2>Select Category</h2>

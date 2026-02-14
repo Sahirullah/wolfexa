@@ -287,7 +287,7 @@ const Contact = () => {
             <FAQItem 
               id={5}
               question="How can I contribute to the platform?"
-              answer="We welcome contributions! You can share study materials, provide feedback, or help other students through our community. Contributors get special recognition and access to exclusive resources."
+              answer="We welcome contributions! You can share study materials or provide feedback to help improve our platform. Contributors get special recognition and access to exclusive resources."
               isOpen={expandedFaqId === 5}
               onToggle={handleFaqToggle}
             />

@@ -24,6 +24,14 @@ const Assignment = () => {
     <div className="assignment-page">
       <Header />
       
+      <div className="assignment-hero">
+        <div className="hero-content">
+          <div className="hero-icon">✏️</div>
+          <h1>Assignments</h1>
+          <p>Complete collection of assignments with solutions and guidelines</p>
+        </div>
+      </div>
+      
       <div className="assignment-container">
         <div className="category-filter">
           <h2>Select Category</h2>

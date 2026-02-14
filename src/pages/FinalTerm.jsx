@@ -24,6 +24,14 @@ const FinalTerm = () => {
     <div className="final-term-page">
       <Header />
       
+      <div className="final-term-hero">
+        <div className="hero-content">
+          <div className="hero-icon">🎓</div>
+          <h1>Final Term Papers</h1>
+          <p>Prepare with authentic final term exam papers from top universities</p>
+        </div>
+      </div>
+      
       <div className="final-term-container">
         <div className="category-filter">
           <h2>Select Category</h2>
