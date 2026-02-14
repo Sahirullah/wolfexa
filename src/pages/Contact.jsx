@@ -43,9 +43,6 @@ const Contact = () => {
       <section className="contact-hero">
         <div className="hero-overlay">
           <div className="hero-content">
-            <div className="hero-logo">
-              <img src={logoImage} alt="Virtual Library Logo" />
-            </div>
             <h1>Contact Virtual Library</h1>
             <p>Get in touch with us for educational support, resources, and assistance</p>
           </div>

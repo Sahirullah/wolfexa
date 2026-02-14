@@ -38,14 +38,6 @@
   padding: 0 20px;
 }
 
-.hero-logo img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-}
-
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 700;
