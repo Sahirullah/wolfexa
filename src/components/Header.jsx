@@ -370,39 +370,23 @@ const Header = () => {
                     <a href="#mcm-gdbs" onClick={handleDropdownClose}>MCM</a>
                   </div>
                 </div>
-                <div className="dropdown-submenu">
-                  <a 
-                    href="#midterm-reviews"
-                    onClick={(e) => handleSubmenuClick(e, 'midterm-reviews')}
+                <div className="dropdown-submenu" data-submenu="midterm-reviews">
+                  <Link 
+                    to="/midterm-reviews"
+                    onClick={handleDropdownClose}
                     className={activeSubmenu === 'midterm-reviews' ? 'active' : ''}
                   >
-                    Midterm Student Reviews <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'midterm-reviews' ? 'submenu-open' : ''}`}>
-                    <a href="#bio-midterm-reviews" onClick={handleDropdownClose}>Biology</a>
-                    <a href="#chem-midterm-reviews" onClick={handleDropdownClose}>Chemistry</a>
-                    <a href="#phy-midterm-reviews" onClick={handleDropdownClose}>Physics</a>
-                    <a href="#islamyath-midterm-reviews" onClick={handleDropdownClose}>Islamyath</a>
-                    <a href="#math-midterm-reviews" onClick={handleDropdownClose}>Mathematics</a>
-                    <a href="#mcm-midterm-reviews" onClick={handleDropdownClose}>MCM</a>
-                  </div>
+                    Midterm Student Reviews
+                  </Link>
                 </div>
-                <div className="dropdown-submenu">
-                  <a 
-                    href="#final-reviews"
-                    onClick={(e) => handleSubmenuClick(e, 'final-reviews')}
+                <div className="dropdown-submenu" data-submenu="final-reviews">
+                  <Link 
+                    to="/final-term-reviews"
+                    onClick={handleDropdownClose}
                     className={activeSubmenu === 'final-reviews' ? 'active' : ''}
                   >
-                    Final Term Student Reviews <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'final-reviews' ? 'submenu-open' : ''}`}>
-                    <a href="#bio-final-reviews" onClick={handleDropdownClose}>Biology</a>
-                    <a href="#chem-final-reviews" onClick={handleDropdownClose}>Chemistry</a>
-                    <a href="#phy-final-reviews" onClick={handleDropdownClose}>Physics</a>
-                    <a href="#islamyath-final-reviews" onClick={handleDropdownClose}>Islamyath</a>
-                    <a href="#math-final-reviews" onClick={handleDropdownClose}>Mathematics</a>
-                    <a href="#mcm-final-reviews" onClick={handleDropdownClose}>MCM</a>
-                  </div>
+                    Final Term Student Reviews
+                  </Link>
                 </div>
 
               </div>

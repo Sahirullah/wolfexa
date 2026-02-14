@@ -10,6 +10,8 @@ import Midterm from './pages/Midterm'
 import FinalTerm from './pages/FinalTerm'
 import Quizzes from './pages/Quizzes'
 import Assignment from './pages/Assignment'
+import MidtermReviews from './pages/MidtermReviews'
+import FinalTermReviews from './pages/FinalTermReviews'
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
             <Route path="/final-term" element={<FinalTerm />} />
             <Route path="/quizzes" element={<Quizzes />} />
             <Route path="/assignment" element={<Assignment />} />
+            <Route path="/midterm-reviews" element={<MidtermReviews />} />
+            <Route path="/final-term-reviews" element={<FinalTermReviews />} />
           </Routes>
         </div>
       </Router>

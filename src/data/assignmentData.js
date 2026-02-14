@@ -1,10 +1,6 @@
-export const allAssignmentData = [
-  // ACC - Accounting
-  { id: 1, code: 'ACC', title: 'Accounting', category: 'acc', image: '📘' },
+const assignmentData = [
   { id: 2, code: 'ACC311', title: 'Fundamentals of Auditing', category: 'acc', image: '📘' },
   { id: 3, code: 'ACC501', title: 'Business Finance', category: 'acc', image: '📘' },
-  
-  // BIF - Bioinformatics
   { id: 4, code: 'BIF101', title: 'Cell Biology', category: 'bif', image: '🧬' },
   { id: 5, code: 'BIF401', title: 'Bioinformatics-I', category: 'bif', image: '🧬' },
   { id: 6, code: 'BIF402', title: 'Ethical & Legal Issues in Bioinformatics', category: 'bif', image: '🧬' },
@@ -12,8 +8,6 @@ export const allAssignmentData = [
   { id: 8, code: 'BIF601', title: 'Bioinformatics Computing I', category: 'bif', image: '🧬' },
   { id: 9, code: 'BIF602', title: 'Bioinformatics Computing II', category: 'bif', image: '🧬' },
   { id: 10, code: 'BIF731', title: 'Advanced Bioinformatics', category: 'bif', image: '🧬' },
-  
-  // BIO - Biology
   { id: 11, code: 'BIO101', title: 'Basic Biology I', category: 'bio', image: '🧪' },
   { id: 12, code: 'BIO102', title: 'Basic Biology II', category: 'bio', image: '🧪' },
   { id: 13, code: 'BIO201', title: 'Cell Biology', category: 'bio', image: '🧪' },
@@ -31,14 +25,10 @@ export const allAssignmentData = [
   { id: 25, code: 'BIO506T', title: 'Biochemistry II (Theory)', category: 'bio', image: '🧪' },
   { id: 26, code: 'BIO732', title: 'Gene Manipulation & Genetic Engineering', category: 'bio', image: '🧪' },
   { id: 27, code: 'BIO734', title: 'Advance Cell Biology', category: 'bio', image: '🧪' },
-  
-  // BNK - Banking
   { id: 28, code: 'BNK601', title: 'Banking Laws & Practices', category: 'bnk', image: '💼' },
   { id: 29, code: 'BNK603', title: 'Consumer Banking', category: 'bnk', image: '💼' },
   { id: 30, code: 'BNK604', title: 'Management of Financial Institutions', category: 'bnk', image: '💼' },
   { id: 31, code: 'BNK610', title: 'Islamic Banking Practices', category: 'bnk', image: '💼' },
-  
-  // BT - Biotechnology
   { id: 32, code: 'BT101', title: 'Ecology, Biodiversity & Evolution-I', category: 'bt', image: '🧬' },
   { id: 33, code: 'BT102', title: 'Microbiology', category: 'bt', image: '🧬' },
   { id: 34, code: 'BT201', title: 'Ecology, Biodiversity & Evolution-II', category: 'bt', image: '🧬' },
@@ -56,12 +46,11 @@ export const allAssignmentData = [
   { id: 46, code: 'BT601', title: 'Virology', category: 'bt', image: '🧬' },
   { id: 47, code: 'BT603', title: 'Fermentation Technology', category: 'bt', image: '🧬' },
   { id: 48, code: 'BT605', title: 'Biosafety & Bioethics', category: 'bt', image: '🧬' },
-  
-  // CHE - Chemistry
   { id: 49, code: 'CHE201', title: 'Thermodynamics', category: 'che', image: '⚗️' },
   { id: 50, code: 'CHE301', title: 'Analytical Chemistry & Instrumentation', category: 'che', image: '⚗️' },
-  
-  // CS - Computer Science
+];
+
+assignmentData.push(
   { id: 51, code: 'CS001', title: 'Computer Proficiency License', category: 'cs', image: '💻' },
   { id: 52, code: 'CS101', title: 'Introduction to Computing', category: 'cs', image: '💻' },
   { id: 53, code: 'CS201', title: 'Introduction to Programming', category: 'cs', image: '💻' },
@@ -111,12 +100,13 @@ export const allAssignmentData = [
   { id: 97, code: 'CS708', title: 'Software Requirement Engineering', category: 'cs', image: '💻' },
   { id: 98, code: 'CS710', title: 'Mobile & Pervasive Computing', category: 'cs', image: '💻' },
   { id: 99, code: 'CS711', title: 'Software Design', category: 'cs', image: '💻' },
-  { id: 100, code: 'CS712', title: 'Distributed DBMS', category: 'cs', image: '💻' },
+  { id: 100, code: 'CS712', title: 'Distributed DBMS', category: 'cs', image: '💻' }
+);
+
+assignmentData.push(
   { id: 101, code: 'CS718', title: 'Wireless Networks', category: 'cs', image: '💻' },
   { id: 102, code: 'CS724', title: 'Software Process Improvement', category: 'cs', image: '💻' },
   { id: 103, code: 'CS726', title: 'Information Retrieval Techniques', category: 'cs', image: '💻' },
-  
-  // ECO - Economics
   { id: 104, code: 'ECO401', title: 'Economics', category: 'eco', image: '📊' },
   { id: 105, code: 'ECO402', title: 'Microeconomics', category: 'eco', image: '📊' },
   { id: 106, code: 'ECO403', title: 'Macroeconomics', category: 'eco', image: '📊' },
@@ -126,16 +116,12 @@ export const allAssignmentData = [
   { id: 110, code: 'ECO606', title: 'Mathematical Economics I', category: 'eco', image: '📊' },
   { id: 111, code: 'ECO607', title: 'Mathematical Economics II', category: 'eco', image: '📊' },
   { id: 112, code: 'ECO612', title: 'Population Economics', category: 'eco', image: '📊' },
-  
-  // EDU - Education
   { id: 113, code: 'EDU101', title: 'Education', category: 'edu', image: '🎓' },
   { id: 114, code: 'EDU201', title: 'Education', category: 'edu', image: '🎓' },
   { id: 115, code: 'EDU301', title: 'Education', category: 'edu', image: '🎓' },
   { id: 116, code: 'EDU401', title: 'Education', category: 'edu', image: '🎓' },
   { id: 117, code: 'EDU501', title: 'Education', category: 'edu', image: '🎓' },
   { id: 118, code: 'EDU601', title: 'Education', category: 'edu', image: '🎓' },
-  
-  // ENG - English
   { id: 119, code: 'ENG001', title: 'English', category: 'eng', image: '📚' },
   { id: 120, code: 'ENG101', title: 'English', category: 'eng', image: '📚' },
   { id: 121, code: 'ENG201', title: 'English', category: 'eng', image: '📚' },
@@ -143,45 +129,34 @@ export const allAssignmentData = [
   { id: 123, code: 'ENG401', title: 'English', category: 'eng', image: '📚' },
   { id: 124, code: 'ENG501', title: 'English', category: 'eng', image: '📚' },
   { id: 125, code: 'ENG529', title: 'English', category: 'eng', image: '📚' },
-  
-  // ETH - Ethics
   { id: 126, code: 'ETH201', title: 'Ethics (For Non-Muslims)', category: 'eth', image: '🧠' },
   { id: 127, code: 'ETH202', title: 'Ethics (For Non-Muslims)', category: 'eth', image: '🧠' },
-  
-  // FIN - Finance
   { id: 128, code: 'FIN611', title: 'Finance', category: 'fin', image: '💰' },
   { id: 129, code: 'FIN621', title: 'Finance', category: 'fin', image: '💰' },
   { id: 130, code: 'FIN622', title: 'Finance', category: 'fin', image: '💰' },
   { id: 131, code: 'FIN623', title: 'Finance', category: 'fin', image: '💰' },
   { id: 132, code: 'FIN624', title: 'Finance', category: 'fin', image: '💰' },
   { id: 133, code: 'FIN625', title: 'Finance', category: 'fin', image: '💰' },
-  
-  // GSC - General Science
   { id: 134, code: 'GSC101', title: 'General Science', category: 'gsc', image: '🌍' },
   { id: 135, code: 'GSC201', title: 'Teaching of General Science', category: 'gsc', image: '🌍' },
-  
-  // HRM - Human Resource Management
   { id: 136, code: 'HRM613', title: 'Human Resource Management', category: 'hrm', image: '👩‍💼' },
   { id: 137, code: 'HRM617', title: 'Human Resource Management', category: 'hrm', image: '👩‍💼' },
   { id: 138, code: 'HRM623', title: 'Human Resource Management', category: 'hrm', image: '👩‍💼' },
   { id: 139, code: 'HRM624', title: 'Human Resource Management', category: 'hrm', image: '👩‍💼' },
   { id: 140, code: 'HRM628', title: 'Human Resource Management', category: 'hrm', image: '👩‍💼' },
-  
-  // ISL - Islamic Studies
   { id: 141, code: 'ISL201', title: 'Islamic Studies', category: 'isl', image: '📿' },
   { id: 142, code: 'ISL202', title: 'Islamic Studies', category: 'isl', image: '📿' },
-  
-  // IT - Information Technology
   { id: 143, code: 'IT430', title: 'E-Commerce', category: 'it', image: '🌐' },
-  
-  // MCM - Mass Communication
   { id: 144, code: 'MCM101', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 145, code: 'MCM301', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 146, code: 'MCM304', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 147, code: 'MCM310', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 148, code: 'MCM311', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 149, code: 'MCM401', title: 'Mass Communication', category: 'mcm', image: '📰' },
-  { id: 150, code: 'MCM404', title: 'Mass Communication', category: 'mcm', image: '📰' },
+  { id: 150, code: 'MCM404', title: 'Mass Communication', category: 'mcm', image: '📰' }
+);
+
+assignmentData.push(
   { id: 151, code: 'MCM411', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 152, code: 'MCM431', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 153, code: 'MCM511', title: 'Mass Communication', category: 'mcm', image: '📰' },
@@ -192,8 +167,6 @@ export const allAssignmentData = [
   { id: 158, code: 'MCM601', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 159, code: 'MCM604', title: 'Mass Communication', category: 'mcm', image: '📰' },
   { id: 160, code: 'MCM610', title: 'Mass Communication', category: 'mcm', image: '📰' },
-  
-  // MGMT - Management
   { id: 161, code: 'MGMT611', title: 'Management', category: 'mgmt', image: '📋' },
   { id: 162, code: 'MGMT614', title: 'Management', category: 'mgmt', image: '📋' },
   { id: 163, code: 'MGMT622', title: 'Management', category: 'mgmt', image: '📋' },
@@ -203,8 +176,6 @@ export const allAssignmentData = [
   { id: 167, code: 'MGMT628', title: 'Management', category: 'mgmt', image: '📋' },
   { id: 168, code: 'MGMT629', title: 'Management', category: 'mgmt', image: '📋' },
   { id: 169, code: 'MGMT630', title: 'Management', category: 'mgmt', image: '📋' },
-  
-  // MGT - Business & Management
   { id: 170, code: 'MGT101', title: 'Business & Management', category: 'mgt', image: '📊' },
   { id: 171, code: 'MGT111', title: 'Business & Management', category: 'mgt', image: '📊' },
   { id: 172, code: 'MGT201', title: 'Business & Management', category: 'mgt', image: '📊' },
@@ -212,8 +183,6 @@ export const allAssignmentData = [
   { id: 174, code: 'MGT301', title: 'Business & Management', category: 'mgt', image: '📊' },
   { id: 175, code: 'MGT401', title: 'Business & Management', category: 'mgt', image: '📊' },
   { id: 176, code: 'MGT402', title: 'Business & Management', category: 'mgt', image: '📊' },
-  
-  // MKT - Marketing
   { id: 177, code: 'MKT501', title: 'Marketing', category: 'mkt', image: '📈' },
   { id: 178, code: 'MKT530', title: 'Marketing', category: 'mkt', image: '📈' },
   { id: 179, code: 'MKT610', title: 'Marketing', category: 'mkt', image: '📈' },
@@ -221,8 +190,6 @@ export const allAssignmentData = [
   { id: 181, code: 'MKT621', title: 'Marketing', category: 'mkt', image: '📈' },
   { id: 182, code: 'MKT624', title: 'Marketing', category: 'mkt', image: '📈' },
   { id: 183, code: 'MKT625', title: 'Marketing', category: 'mkt', image: '📈' },
-  
-  // MTH - Mathematics
   { id: 184, code: 'MTH001', title: 'Mathematics', category: 'mth', image: '📐' },
   { id: 185, code: 'MTH101', title: 'Mathematics', category: 'mth', image: '📐' },
   { id: 186, code: 'MTH102', title: 'Mathematics', category: 'mth', image: '📐' },
@@ -236,23 +203,16 @@ export const allAssignmentData = [
   { id: 194, code: 'MTH645', title: 'Mathematics', category: 'mth', image: '📐' },
   { id: 195, code: 'MTH646', title: 'Mathematics', category: 'mth', image: '📐' },
   { id: 196, code: 'MTH647', title: 'Mathematics', category: 'mth', image: '📐' },
-  
-  // PAD - Public Administration
   { id: 197, code: 'PAD603', title: 'Governance, Democracy & Society', category: 'pad', image: '📜' },
-  
-  // PAK - Pakistan Studies
   { id: 198, code: 'PAK301', title: 'Pakistan Studies', category: 'pak', image: '🇵🇰' },
   { id: 199, code: 'PAK302', title: 'Pakistan Studies', category: 'pak', image: '🇵🇰' },
-  
-  // PHY - Physics
   { id: 200, code: 'PHY101', title: 'Physics', category: 'phy', image: '⚛️' },
-  { id: 201, code: 'PHY301', title: 'Circuit Theory', category: 'phy', image: '⚛️' },
-  
-  // PSC - Political Science
+  { id: 201, code: 'PHY301', title: 'Circuit Theory', category: 'phy', image: '⚛️' }
+);
+
+assignmentData.push(
   { id: 202, code: 'PSC201', title: 'Political Science', category: 'psc', image: '🗳️' },
   { id: 203, code: 'PSC401', title: 'Political Science', category: 'psc', image: '🗳️' },
-  
-  // PSY - Psychology
   { id: 204, code: 'PSY101', title: 'Psychology', category: 'psy', image: '🧠' },
   { id: 205, code: 'PSY401', title: 'Psychology', category: 'psy', image: '🧠' },
   { id: 206, code: 'PSY404', title: 'Psychology', category: 'psy', image: '🧠' },
@@ -267,8 +227,6 @@ export const allAssignmentData = [
   { id: 215, code: 'PSY610', title: 'Psychology', category: 'psy', image: '🧠' },
   { id: 216, code: 'PSY631', title: 'Psychology', category: 'psy', image: '🧠' },
   { id: 217, code: 'PSY632', title: 'Psychology', category: 'psy', image: '🧠' },
-  
-  // SOC - Sociology
   { id: 218, code: 'SOC101', title: 'Sociology', category: 'soc', image: '👥' },
   { id: 219, code: 'SOC301', title: 'Sociology', category: 'soc', image: '👥' },
   { id: 220, code: 'SOC302', title: 'Sociology', category: 'soc', image: '👥' },
@@ -277,19 +235,13 @@ export const allAssignmentData = [
   { id: 223, code: 'SOC403', title: 'Sociology', category: 'soc', image: '👥' },
   { id: 224, code: 'SOC404', title: 'Sociology', category: 'soc', image: '👥' },
   { id: 225, code: 'SOC602', title: 'Sociology', category: 'soc', image: '👥' },
-  
-  // STA - Statistics
   { id: 226, code: 'STA301', title: 'Statistics', category: 'sta', image: '📊' },
   { id: 227, code: 'STA404', title: 'Statistics', category: 'sta', image: '📊' },
   { id: 228, code: 'STA406', title: 'Statistics', category: 'sta', image: '📊' },
   { id: 229, code: 'STA630', title: 'Statistics', category: 'sta', image: '📊' },
   { id: 230, code: 'STA641', title: 'Statistics', category: 'sta', image: '📊' },
   { id: 231, code: 'STA642', title: 'Statistics', category: 'sta', image: '📊' },
-  
-  // URD - Urdu
   { id: 232, code: 'URD101', title: 'Urdu', category: 'urd', image: '📜' },
-  
-  // ZOO - Zoology
   { id: 233, code: 'ZOO101', title: 'Biological Techniques', category: 'zoo', image: '🐾' },
   { id: 234, code: 'ZOO201', title: 'Animal Diversity', category: 'zoo', image: '🐾' },
   { id: 235, code: 'ZOO202', title: 'Animal Diversity: Chordates', category: 'zoo', image: '🐾' },
@@ -303,8 +255,10 @@ export const allAssignmentData = [
   { id: 243, code: 'ZOO501', title: 'Molecular Endocrinology', category: 'zoo', image: '🐾' },
   { id: 244, code: 'ZOO502', title: 'Evolutionary Biology', category: 'zoo', image: '🐾' },
   { id: 245, code: 'ZOO511', title: 'Genetic Techniques', category: 'zoo', image: '🐾' },
-  { id: 246, code: 'ZOO512', title: 'Animal Diversity: Invertebrates', category: 'zoo', image: '🐾' },
-];
+  { id: 246, code: 'ZOO512', title: 'Animal Diversity: Invertebrates', category: 'zoo', image: '🐾' }
+);
+
+export const allAssignmentData = assignmentData;
 
 export const assignmentCategories = [
   { id: 'all', name: '📚 All Courses' },

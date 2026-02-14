@@ -24,14 +24,6 @@ const Assignment = () => {
     <div className="assignment-page">
       <Header />
       
-      <div className="assignment-hero">
-        <div className="hero-content">
-          <div className="hero-icon">📝</div>
-          <h1>ASSIGNMENTS</h1>
-          <p>Virtual University Assignment Study Materials</p>
-        </div>
-      </div>
-
       <div className="assignment-container">
         <div className="category-filter">
           <h2>Select Category</h2>

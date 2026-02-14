@@ -13,9 +13,6 @@ const About = () => {
         {/* Hero Section */}
         <section className="about-hero">
           <div className="about-hero-container">
-            <div className="about-hero-logo">
-              <img src={logoImage} alt="Virtual Library Logo" className="hero-logo-image" />
-            </div>
             <h1 className="about-hero-title">About Virtual Library</h1>
             <p className="about-hero-subtitle">
               Empowering Pakistani students with quality educational resources since 2024

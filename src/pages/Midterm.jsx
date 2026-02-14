@@ -24,14 +24,6 @@ const Midterm = () => {
     <div className="midterm-page">
       <Header />
       
-      <div className="midterm-hero">
-        <div className="hero-content">
-          <div className="hero-icon">📋</div>
-          <h1>MIDTERM</h1>
-          <p>Virtual University Midterm Exam Study Materials</p>
-        </div>
-      </div>
-
       <div className="midterm-container">
         <div className="category-filter">
           <h2>Select Category</h2>

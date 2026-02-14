@@ -24,14 +24,6 @@ const Quizzes = () => {
     <div className="quizzes-page">
       <Header />
       
-      <div className="quizzes-hero">
-        <div className="hero-content">
-          <div className="hero-icon">❓</div>
-          <h1>QUIZZES</h1>
-          <p>Virtual University Quiz Study Materials</p>
-        </div>
-      </div>
-
       <div className="quizzes-container">
         <div className="category-filter">
           <h2>Select Category</h2>

@@ -24,14 +24,6 @@ const FinalTerm = () => {
     <div className="final-term-page">
       <Header />
       
-      <div className="final-term-hero">
-        <div className="hero-content">
-          <div className="hero-icon">📝</div>
-          <h1>FINAL TERM</h1>
-          <p>Virtual University Final Term Exam Study Metrials</p>
-        </div>
-      </div>
-
       <div className="final-term-container">
         <div className="category-filter">
           <h2>Select Category</h2>
