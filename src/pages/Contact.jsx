@@ -3,14 +3,12 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './Contact.css';
 
-const FAQItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const FAQItem = ({ id, question, answer, isOpen, onToggle }) => {
   return (
     <div className="faq-accordion-item">
       <button 
         className={`faq-question ${isOpen ? 'active' : ''}`}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => onToggle(id)}
       >
         <span className="faq-question-text">{question}</span>
         <span className="faq-toggle-icon">
@@ -27,6 +25,7 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const Contact = () => {
+  const [expandedFaqId, setExpandedFaqId] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -34,6 +33,10 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+
+  const handleFaqToggle = (id) => {
+    setExpandedFaqId(expandedFaqId === id ? null : id);
+  };
 
   const handleChange = (e) => {
     setFormData({
@@ -91,15 +94,6 @@ const Contact = () => {
               <h3>Email Us</h3>
               <p>Send us your questions and feedback</p>
               <a href="mailto:info@virtuallibrary.com" className="contact-link">info@virtuallibrary.com</a>
-            </div>
-
-            <div className="contact-card">
-              <div className="card-icon">
-                <i className="fab fa-whatsapp"></i>
-              </div>
-              <h3>WhatsApp Group</h3>
-              <p>Join our educational community</p>
-              <a href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy" target="_blank" rel="noopener noreferrer" className="contact-link">Join Group</a>
             </div>
 
             <div className="contact-card">
@@ -263,28 +257,46 @@ const Contact = () => {
           </div>
           <div className="faq-accordion">
             <FAQItem 
+              id={1}
               question="How can I access study materials?"
               answer="All study materials are available for free on our website. Simply navigate to your university section (VU or AIOU) and browse by subject or material type. You can download materials directly without any registration required."
+              isOpen={expandedFaqId === 1}
+              onToggle={handleFaqToggle}
             />
             <FAQItem 
+              id={2}
               question="Are the materials updated regularly?"
               answer="Yes, we continuously update our materials with the latest handouts, past papers, and study resources to ensure students have access to current content. We add new materials weekly based on student requests and academic calendars."
+              isOpen={expandedFaqId === 2}
+              onToggle={handleFaqToggle}
             />
             <FAQItem 
+              id={3}
               question="Can I request specific study materials?"
               answer="Absolutely! Use the contact form above to request specific materials, and we'll do our best to add them to our collection. We prioritize requests from our community and typically fulfill them within 2-3 business days."
+              isOpen={expandedFaqId === 3}
+              onToggle={handleFaqToggle}
             />
             <FAQItem 
+              id={4}
               question="Is there a mobile app available?"
               answer="Currently, our website is fully responsive and works great on mobile devices. We're working on a dedicated mobile app for an even better experience. You can bookmark our site for quick access on your phone."
+              isOpen={expandedFaqId === 4}
+              onToggle={handleFaqToggle}
             />
             <FAQItem 
+              id={5}
               question="How can I contribute to the platform?"
-              answer="We welcome contributions! You can share study materials, provide feedback, or help other students through our WhatsApp community group. Contributors get special recognition and access to exclusive resources."
+              answer="We welcome contributions! You can share study materials, provide feedback, or help other students through our community. Contributors get special recognition and access to exclusive resources."
+              isOpen={expandedFaqId === 5}
+              onToggle={handleFaqToggle}
             />
             <FAQItem 
+              id={6}
               question="What subjects are covered?"
               answer="We cover a wide range of subjects including Computer Science, Biology, Chemistry, Physics, Mathematics, Islamic Studies, and many more. New subjects are added regularly based on student demand and university curricula."
+              isOpen={expandedFaqId === 6}
+              onToggle={handleFaqToggle}
             />
           </div>
         </div>

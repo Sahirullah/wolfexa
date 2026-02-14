@@ -92,21 +92,7 @@ const Services = () => {
           ))}
         </div>
         
-        <div className="services-footer">
-          <div className="services-cta">
-            <h3 className="cta-title">Ready to Get Started?</h3>
-            <p className="cta-subtitle">Join thousands of students and professionals who trust our services</p>
-            <a 
-              href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="cta-button"
-            >
-              Contact Us Today
-              <span className="btn-arrow">→</span>
-            </a>
-          </div>
-        </div>
+
       </div>
     </section>
   );

@@ -130,30 +130,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="about-cta">
-          <div className="about-container">
-            <div className="cta-content">
-              <h2 className="cta-title">Join Our Community</h2>
-              <p className="cta-description">
-                Ready to access thousands of study materials and connect with fellow students?
-              </p>
-              <div className="cta-buttons">
-                <a 
-                  href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="cta-button primary"
-                >
-                  Join WhatsApp Group
-                </a>
-                <a href="/" className="cta-button secondary">
-                  Browse Materials
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+
       </main>
 
       <Footer />

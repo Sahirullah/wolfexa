@@ -25,7 +25,6 @@ const Footer = () => {
               <a href="https://twitter.com/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link">🐦</a>
               <a href="https://www.instagram.com/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link">📷</a>
               <a href="https://www.linkedin.com/company/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link">💼</a>
-              <a href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy" target="_blank" rel="noopener noreferrer" className="social-link">💬</a>
             </div>
           </div>
 
@@ -60,7 +59,6 @@ const Footer = () => {
               <li><a href="#how-to-download">How to Download</a></li>
               <li><a href="#contact">Contact Us</a></li>
               <li><a href="#faq">FAQ</a></li>
-              <li><a href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy" target="_blank" rel="noopener noreferrer">WhatsApp Group</a></li>
               <li><a href="#request-material">Request Material</a></li>
             </ul>
           </div>

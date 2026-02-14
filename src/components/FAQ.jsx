@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './FAQ.css';
 
 const FAQ = () => {
@@ -38,7 +38,11 @@ const FAQ = () => {
   ];
 
   const toggleExpand = (id) => {
-    setExpandedId(expandedId === id ? null : id);
+    if (expandedId === id) {
+      setExpandedId(null);
+    } else {
+      setExpandedId(id);
+    }
   };
 
   return (

@@ -126,21 +126,7 @@ const Reviews = () => {
           ))}
         </div>
 
-        <div className="reviews-cta">
-          <div className="cta-content">
-            <h3 className="cta-title">Ready to Join Our Student Community?</h3>
-            <p className="cta-subtitle">Browse our collection and find the perfect study materials for your courses</p>
-            <a 
-              href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="cta-button"
-            >
-              Browse Materials
-              <span className="btn-arrow">→</span>
-            </a>
-          </div>
-        </div>
+
       </div>
     </section>
   );

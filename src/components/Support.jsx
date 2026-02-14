@@ -14,8 +14,6 @@ const Support = () => {
         'Assignments',
         'Study Guides'
       ],
-      action: 'Browse Materials',
-      link: 'https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy',
       color: '#FF741F',
       bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     },
@@ -30,8 +28,6 @@ const Support = () => {
         'Timed Tests',
         'Instant Results'
       ],
-      action: 'Take Exam',
-      link: 'https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy',
       color: '#FF741F',
       bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     },
@@ -46,8 +42,6 @@ const Support = () => {
         'Peer Help',
         'Academic Guidance'
       ],
-      action: 'Get Help',
-      link: 'https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy',
       color: '#FF741F',
       bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
     }
@@ -85,32 +79,7 @@ const Support = () => {
                   ))}
                 </div>
                 
-                <div className="support-action">
-                  <div className="support-buttons">
-                    <a 
-                      href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="support-btn primary"
-                    >
-                      <span>VU Students</span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M7 17l9.2-9.2M17 17V7H7"/>
-                      </svg>
-                    </a>
-                    <a 
-                      href="https://chat.whatsapp.com/LRgagp3fuaM1hk8261RiCy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="support-btn secondary"
-                    >
-                      <span>AIOU Students</span>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M7 17l9.2-9.2M17 17V7H7"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
+
               </div>
             </div>
           ))}
