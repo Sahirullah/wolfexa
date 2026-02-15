@@ -13,6 +13,7 @@ import Assignment from './pages/Assignment'
 import MidtermReviews from './pages/MidtermReviews'
 import FinalTermReviews from './pages/FinalTermReviews'
 import SchoolBase from './pages/SchoolBase'
+import BoardDetail from './pages/BoardDetail'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/midterm-reviews" element={<MidtermReviews />} />
             <Route path="/final-term-reviews" element={<FinalTermReviews />} />
             <Route path="/school-base" element={<SchoolBase />} />
+            <Route path="/board/:boardName" element={<BoardDetail />} />
           </Routes>
         </div>
       </Router>
