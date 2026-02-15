@@ -519,6 +519,21 @@ const Header = () => {
                 <a href="#personalities" onClick={handleDropdownClose}>Personalities</a>
               </div>
             </li>
+            <li className="dropdown">
+              <a 
+                href="#general"
+                onClick={(e) => handleCategoryClick(e, true, 'general')}
+              >
+                General <span className="dropdown-arrow">▼</span>
+              </a>
+              <div className={`dropdown-menu ${activeDropdown === 'general' ? 'mobile-open' : ''}`}>
+                <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
+                <Link to="/school-base" onClick={handleDropdownClose}>School Base</Link>
+                <a href="#college-base" onClick={handleDropdownClose}>College Base</a>
+                <a href="#english" onClick={handleDropdownClose}>English</a>
+                <a href="#job-guide" onClick={handleDropdownClose}>Job Guide</a>
+              </div>
+            </li>
             <li><a href="#blogs">Blogs</a></li>
             <li><a href="#opportunities">Opportunities</a></li>
           </ul>
