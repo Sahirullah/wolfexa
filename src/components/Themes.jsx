@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Themes.css';
 
 const Services = () => {
@@ -19,17 +20,18 @@ const Services = () => {
     },
     {
       id: 2,
-      title: 'Web App Development',
-      description: 'Professional web application development services for businesses, startups, and educational institutions.',
+      title: 'Web Development',
+      description: 'Learn modern web development with comprehensive courses covering HTML, CSS, JavaScript, React, and backend technologies.',
       icon: 'fas fa-code',
       features: [
-        'Custom Web Apps',
-        'Responsive Design',
-        'Modern Technologies',
-        'Full-Stack Solutions'
+        'Frontend Development',
+        'Backend Development',
+        'Full-Stack Solutions',
+        'Modern Technologies'
       ],
       color: '#FF741F',
-      bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)'
+      bgGradient: 'linear-gradient(135deg, #FF741F 0%, #ff8c42 100%)',
+      link: '/web-development'
     },
     {
       id: 3,
@@ -80,12 +82,21 @@ const Services = () => {
                 </div>
                 
                 <div className="service-action">
-                  <button className="service-btn">
-                    <span>Learn More</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </button>
+                  {service.link ? (
+                    <Link to={service.link} className="service-btn">
+                      <span>Learn More</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </Link>
+                  ) : (
+                    <button className="service-btn">
+                      <span>Learn More</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

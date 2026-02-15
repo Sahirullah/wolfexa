@@ -472,20 +472,13 @@ const Header = () => {
               <div className={`dropdown-menu ${activeDropdown === 'courses' ? 'mobile-open' : ''}`}>
                 <button className="dropdown-close" onClick={handleDropdownClose}>✕</button>
                 <div className="dropdown-submenu">
-                  <a 
-                    href="#web-development"
-                    onClick={(e) => handleSubmenuClick(e, 'web-development')}
+                  <Link 
+                    to="/web-development"
+                    onClick={handleDropdownClose}
                     className={activeSubmenu === 'web-development' ? 'active' : ''}
                   >
-                    Web Development <span className="dropdown-arrow">▶</span>
-                  </a>
-                  <div className={`submenu ${activeSubmenu === 'web-development' ? 'submenu-open' : ''}`}>
-                    <a href="#web-dev-intro" onClick={handleDropdownClose}>Introduction to Web Dev</a>
-                    <a href="#web-dev-html-css" onClick={handleDropdownClose}>HTML & CSS</a>
-                    <a href="#web-dev-javascript" onClick={handleDropdownClose}>JavaScript</a>
-                    <a href="#web-dev-react" onClick={handleDropdownClose}>React</a>
-                    <a href="#web-dev-backend" onClick={handleDropdownClose}>Backend Development</a>
-                  </div>
+                    Web Development
+                  </Link>
                 </div>
                 <div className="dropdown-submenu">
                   <a 

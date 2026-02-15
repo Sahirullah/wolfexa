@@ -1,6 +1,7 @@
 import React from 'react';
 import logoImage from '../assets/logo (3).png';
 import './Footer.css';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -21,10 +22,18 @@ const Footer = () => {
               Access high-quality handouts, assignments, and academic content for Pakistani universities.
             </p>
             <div className="footer-social">
-              <a href="https://www.facebook.com/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link">📘</a>
-              <a href="https://twitter.com/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link">🐦</a>
-              <a href="https://www.instagram.com/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link">📷</a>
-              <a href="https://www.linkedin.com/company/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link">💼</a>
+              <a href="https://www.facebook.com/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link facebook">
+                <FaFacebook />
+              </a>
+              <a href="https://twitter.com/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link twitter">
+                <FaTwitter />
+              </a>
+              <a href="https://www.instagram.com/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link instagram">
+                <FaInstagram />
+              </a>
+              <a href="https://www.linkedin.com/company/virtuallibrary" target="_blank" rel="noopener noreferrer" className="social-link linkedin">
+                <FaLinkedin />
+              </a>
             </div>
           </div>
 

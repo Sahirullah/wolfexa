@@ -63,23 +63,7 @@ const Reviews = () => {
           </p>
         </div>
 
-        <div className="reviews-stats">
-          <div className="stat-item">
-            <div className="stat-number">4.9</div>
-            <div className="stat-label">Average Rating</div>
-            <div className="stat-stars">
-              {renderStars(5)}
-            </div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">5K+</div>
-            <div className="stat-label">Happy Students</div>
-          </div>
-          <div className="stat-item">
-            <div className="stat-number">10K+</div>
-            <div className="stat-label">Study Materials</div>
-          </div>
-        </div>
+
 
         <div className="reviews-grid">
           {reviews.map((review) => (
