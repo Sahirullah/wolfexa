@@ -9,8 +9,8 @@ const Assignment = () => {
 
   const assignments = allAssignmentData.map(item => ({
     ...item,
-    description: `Download Assignments for ${item.title} (${item.code}) in PDF Format.`,
-    status: 'Assignments',
+    description: `Download Assignments for ${item.title} in PDF Format.`,
+    status: `Class ${item.class}`,
     hasLecture: true
   }));
 
@@ -26,15 +26,15 @@ const Assignment = () => {
       
       <div className="assignment-hero">
         <div className="hero-content">
-          <div className="hero-icon">✏️</div>
-          <h1>Assignments</h1>
-          <p>Complete collection of assignments with solutions and guidelines</p>
+          <div className="hero-icon">📝</div>
+          <h1>ASSIGNMENTS</h1>
+          <p>Class 9-10 Assignment Study Materials</p>
         </div>
       </div>
       
       <div className="assignment-container">
         <div className="category-filter">
-          <h2>Select Category</h2>
+          <h2>Select Subject</h2>
           <div className="filter-buttons">
             {categories.map(cat => (
               <button
@@ -78,7 +78,7 @@ const Assignment = () => {
 
         {filteredAssignments.length === 0 && (
           <div className="no-results">
-            <p>No assignments found in this category.</p>
+            <p>No assignments found in this subject.</p>
           </div>
         )}
       </div>

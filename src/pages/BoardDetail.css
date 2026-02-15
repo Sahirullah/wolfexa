@@ -49,6 +49,35 @@
   opacity: 0.9;
 }
 
+.board-info {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.publisher-info {
+  font-size: 16px;
+  margin: 10px 0;
+  opacity: 0.95;
+}
+
+.textbook-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.textbook-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+}
+
 /* Content Container */
 .board-detail-container {
   max-width: 1200px;
@@ -104,6 +133,16 @@
   font-size: 16px;
   font-weight: 600;
   color: #333;
+  margin-bottom: 8px;
+}
+
+.subject-class {
+  font-size: 12px;
+  color: #999;
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
 }
 
 /* Past Papers Grid */
@@ -149,6 +188,17 @@
   background: #f0f0f0;
   padding: 8px 12px;
   border-radius: 6px;
+  display: inline-block;
+}
+
+.paper-class {
+  font-size: 12px;
+  color: #667eea;
+  font-weight: 600;
+  margin-top: 8px;
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
   display: inline-block;
 }
 
@@ -201,6 +251,68 @@
   color: #333;
 }
 
+/* Books Grid */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.book-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-top: 4px solid #764ba2;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.book-header {
+  margin-bottom: 15px;
+}
+
+.book-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.book-body {
+  text-align: left;
+}
+
+.book-subject,
+.book-author,
+.book-class {
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0;
+}
+
+.book-subject {
+  font-weight: 600;
+  color: #764ba2;
+}
+
+.paper-difficulty {
+  font-size: 12px;
+  color: #667eea;
+  font-weight: 600;
+  margin-top: 8px;
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .board-detail-title {
@@ -227,6 +339,11 @@
 
   .guides-grid {
     grid-template-columns: 1fr;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
   }
 
   .board-detail-hero {
