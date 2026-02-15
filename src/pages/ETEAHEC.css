@@ -1,0 +1,643 @@
+.etea-hec-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color, #f5f5f5);
+}
+
+.etea-hec-main {
+  flex: 1;
+}
+
+.etea-hec-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.etea-hec-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.etea-hec-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.etea-hec-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.etea-hec-hero-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* Tab Navigation */
+.tab-navigation-section {
+  padding: 40px 20px;
+  background-color: var(--bg-color, #f5f5f5);
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #667eea;
+  background-color: white;
+  color: #667eea;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tab-btn.active {
+  background-color: #667eea;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Content Section */
+.etea-hec-content {
+  padding: 40px 20px;
+  background-color: var(--bg-color, #f5f5f5);
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content-header h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.content-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #667eea;
+}
+
+.detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.info-value {
+  color: #333;
+}
+
+/* Info Section */
+.etea-hec-info {
+  padding: 40px 20px;
+  background-color: white;
+}
+
+/* Past Papers Section */
+.past-papers-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.papers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.paper-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-top: 4px solid #667eea;
+  display: flex;
+  flex-direction: column;
+}
+
+.paper-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(102, 126, 234, 0.2);
+}
+
+.paper-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.paper-icon {
+  font-size: 2rem;
+}
+
+.paper-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.paper-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.paper-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: #667eea;
+}
+
+.meta-value {
+  color: #333;
+}
+
+.paper-downloads {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #e8f0fe;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.download-count {
+  font-weight: 600;
+  color: #667eea;
+  font-size: 0.95rem;
+}
+
+.download-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.download-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* Study Materials Section */
+.study-materials-section {
+  padding: 60px 20px;
+  background-color: white;
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.material-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid #e8e8e8;
+  cursor: pointer;
+}
+
+.material-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.15);
+  border-color: #667eea;
+}
+
+.material-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.material-icon {
+  font-size: 2.5rem;
+}
+
+.material-type {
+  background-color: #667eea;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.material-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.material-category {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.material-info {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.info-badge {
+  background-color: #f0f4ff;
+  color: #667eea;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.material-topics {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+.topics-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.topics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topic-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.access-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.access-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.info-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.info-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.info-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-box li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  line-height: 1.6;
+}
+
+.info-box li:last-child {
+  border-bottom: none;
+}
+
+.info-box a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.info-box a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Dark Mode Support */
+:root[data-theme="dark"] .etea-hec-page {
+  background-color: #1a1a1a;
+}
+
+:root[data-theme="dark"] .content-header h2 {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .content-header p {
+  color: #ccc;
+}
+
+:root[data-theme="dark"] .detail-card {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .card-title {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .card-description {
+  color: #ccc;
+}
+
+:root[data-theme="dark"] .info-value {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .etea-hec-info {
+  background-color: #1a1a1a;
+}
+
+:root[data-theme="dark"] .past-papers-section {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+:root[data-theme="dark"] .paper-card {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .paper-title {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .meta-value {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .paper-meta {
+  background-color: #1a1a1a;
+}
+
+:root[data-theme="dark"] .paper-downloads {
+  background-color: #1a3a5a;
+}
+
+:root[data-theme="dark"] .study-materials-section {
+  background-color: #1a1a1a;
+}
+
+:root[data-theme="dark"] .material-card {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border-color: #3a3a3a;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .material-title {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .material-topics {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+:root[data-theme="dark"] .topics-label {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .info-badge {
+  background-color: #1a3a5a;
+  color: #a8c5ff;
+}
+
+:root[data-theme="dark"] .section-header h2 {
+  color: #fff;
+}
+
+:root[data-theme="dark"] .section-header p {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .etea-hec-hero-title {
+    font-size: 2rem;
+  }
+
+  .etea-hec-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-buttons {
+    gap: 10px;
+  }
+
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .content-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .papers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .materials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paper-card,
+  .material-card {
+    padding: 15px;
+  }
+
+  .material-icon {
+    font-size: 2rem;
+  }
+}
