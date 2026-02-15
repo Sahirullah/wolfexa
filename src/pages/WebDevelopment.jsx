@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './WebDevelopment.css';
@@ -9,7 +10,7 @@ const WebDevelopment = () => {
 
   const allCourses = [
     // Frontend Fundamentals
-    'HTML5',
+    'html.',
     'CSS3',
     'JavaScript (Basics to Advanced)',
     'ES6 / Modern JavaScript',
@@ -158,8 +159,17 @@ const WebDevelopment = () => {
             <div className="courses-list">
               {allCourses.slice(0, showAll ? allCourses.length : coursesPerPage).map((course, index) => (
                 <div key={index} className="course-item">
-                  <span className="course-number">{index + 1}</span>
-                  <span className="course-name">{course}</span>
+                  {course === 'html.' ? (
+                    <Link to="/html" className="course-item-link">
+                      <span className="course-number">{index + 1}</span>
+                      <span className="course-name">{course}</span>
+                    </Link>
+                  ) : (
+                    <>
+                      <span className="course-number">{index + 1}</span>
+                      <span className="course-name">{course}</span>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
